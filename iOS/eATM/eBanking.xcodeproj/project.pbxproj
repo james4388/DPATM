@@ -26,6 +26,7 @@
 		50306DC51B55F83C0080AC09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50306DC31B55F83C0080AC09 /* LaunchScreen.xib */; };
 		50306DD11B55F83C0080AC09 /* eBankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DD01B55F83C0080AC09 /* eBankingTests.swift */; };
 		50306DDB1B55F88F0080AC09 /* Transaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50306DDA1B55F88F0080AC09 /* Transaction.storyboard */; };
+		503E51D81B56C3DA00C37770 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E51D71B56C3DA00C37770 /* LoadingView.swift */; };
 		50A330561B56023700029656 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A330551B56023700029656 /* WithdrawViewController.swift */; };
 		50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A330571B56027500029656 /* TransactionCompleteViewController.swift */; };
 		50A3305A1B56029C00029656 /* TransactionFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A330591B56029C00029656 /* TransactionFailViewController.swift */; };
@@ -66,6 +67,7 @@
 		50306DCF1B55F83C0080AC09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50306DD01B55F83C0080AC09 /* eBankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eBankingTests.swift; sourceTree = "<group>"; };
 		50306DDA1B55F88F0080AC09 /* Transaction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transaction.storyboard; sourceTree = "<group>"; };
+		503E51D71B56C3DA00C37770 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		50A330551B56023700029656 /* WithdrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		50A330571B56027500029656 /* TransactionCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCompleteViewController.swift; sourceTree = "<group>"; };
 		50A330591B56029C00029656 /* TransactionFailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionFailViewController.swift; sourceTree = "<group>"; };
@@ -129,9 +131,8 @@
 		502CAED21B56306E00DE9261 /* Proxy & Singleton & Facade */ = {
 			isa = PBXGroup;
 			children = (
-				502CAED61B5638A100DE9261 /* APIInterface.swift */,
-				502CAED81B5638E400DE9261 /* APIProxy.swift */,
-				502CAEDA1B56394A00DE9261 /* APIRemoteRealObject.swift */,
+				503E51D61B56C38A00C37770 /* Loading View */,
+				503E51D51B56C35300C37770 /* Remote API */,
 			);
 			name = "Proxy & Singleton & Facade";
 			sourceTree = "<group>";
@@ -260,6 +261,24 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		503E51D51B56C35300C37770 /* Remote API */ = {
+			isa = PBXGroup;
+			children = (
+				502CAED61B5638A100DE9261 /* APIInterface.swift */,
+				502CAED81B5638E400DE9261 /* APIProxy.swift */,
+				502CAEDA1B56394A00DE9261 /* APIRemoteRealObject.swift */,
+			);
+			name = "Remote API";
+			sourceTree = "<group>";
+		};
+		503E51D61B56C38A00C37770 /* Loading View */ = {
+			isa = PBXGroup;
+			children = (
+				503E51D71B56C3DA00C37770 /* LoadingView.swift */,
+			);
+			name = "Loading View";
+			sourceTree = "<group>";
+		};
 		50A3305D1B56043700029656 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +404,7 @@
 				00DDD8F61B56C75D00A2378A /* LoginViewController.swift in Sources */,
 				502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */,
 				502CAECC1B56249400DE9261 /* Bill.swift in Sources */,
+				503E51D81B56C3DA00C37770 /* LoadingView.swift in Sources */,
 				50306DBB1B55F83C0080AC09 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
