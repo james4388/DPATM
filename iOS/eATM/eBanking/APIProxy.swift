@@ -12,6 +12,7 @@ class APIProxy: NSObject, APIInteface {
     
     private var realObject : APIRemoteRealObject!
     
+    //MARK: Singleton
     private class var instance : APIProxy{
         struct Singleton {
             static let instance = APIProxy()
@@ -32,12 +33,12 @@ class APIProxy: NSObject, APIInteface {
     func login(username: String!, password: String!, completionBlock: APICompletionHandler) {
         
         // show loading view
-        
+        LoadingView.sharedInstance().startLoading()
         realObject.login(username, password: password) { (response: NSDictionary!, error : NSError!) -> () in
             // hide loading view
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                
                 completionBlock(response, error)
+                LoadingView.sharedInstance().stopLoading()
             })
         }
     }
