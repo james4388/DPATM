@@ -14,7 +14,7 @@ class APIRemoteRealObject: NSObject, APIInteface {
     
     override init() {
         super.init()
-        endpoint = NSURL(string : "http://google.com")
+        endpoint = NSURL(string : "http://10.10.14.18:8080")
     }
     
     private func paramsKeyPairString(params : Dictionary<String, String>!) -> String{
@@ -34,17 +34,17 @@ class APIRemoteRealObject: NSObject, APIInteface {
         return request
     }
     
-    private func sendGetRequest(requestPath: String!, method : String!, params : Dictionary<String, String>!, completionBlock : (NSDictionary?, NSError?) -> ()){
+    private func sendGetRequest(requestPath: String!, params : Dictionary<String, String>!, completionBlock handler: (NSDictionary?, NSError?) -> ()){
         var request = createRequestForPath(requestPath, method: "GET", params: params)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response : NSURLResponse!, data : NSData!, error : NSError!) -> Void in
             if error != nil{
-                completionBlock(nil, error)
+                handler(nil, error)
             }else{
                 if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary{
-                    completionBlock(json, nil)
+                    handler(json, nil)
                 }else{
-                    completionBlock(nil, NSError(domain: "eATM", code: 100, userInfo: [NSLocalizedDescriptionKey : "Wrong JSON format"]))
+                    handler(nil, NSError(domain: "eATM", code: 100, userInfo: [NSLocalizedDescriptionKey : "Wrong JSON format"]))
                 }
             }
             
@@ -52,17 +52,17 @@ class APIRemoteRealObject: NSObject, APIInteface {
     }
     
 
-    private func sendPOSTRequest(requestPath: String!, method : String!, params : Dictionary<String, String>!, completionBlock : (NSDictionary?, NSError?) -> ()){
+    private func sendPOSTRequest(requestPath: String!, params : Dictionary<String, String>!, completionBlock handler: (NSDictionary?, NSError?) -> ()){
         var request = createRequestForPath(requestPath, method: "POST", params: params)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response : NSURLResponse!, data : NSData!, error : NSError!) -> Void in
             if error != nil{
-                completionBlock(nil, error)
+                handler(nil, error)
             }else{
                 if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary{
-                    completionBlock(json, nil)
+                    handler(json, nil)
                 }else{
-                    completionBlock(nil, NSError(domain: "eATM", code: 100, userInfo: [NSLocalizedDescriptionKey : "Wrong JSON format"]))
+                    handler(nil, NSError(domain: "eATM", code: 100, userInfo: [NSLocalizedDescriptionKey : "Wrong JSON format"]))
                 }
             }
             
@@ -70,8 +70,10 @@ class APIRemoteRealObject: NSObject, APIInteface {
     }
     
     //MARK: Implement APIInterface
-    func login(username: String!, password: String!, completionBlock: APICompletionHandler) {
-        
+    func login(username: String!, password: String!, completionBlock handler: APICompletionHandler) {
+        sendPOSTRequest("account/login", params: ["userid" : username, "pincode" : password ]) { (json : NSDictionary?, error : NSError?) -> () in
+            handler(json, error)
+        }
     }
     
 }
