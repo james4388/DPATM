@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00DDD8F31B56C75D00A2378A /* AccountTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8EE1B56C75D00A2378A /* AccountTypeViewController.swift */; };
+		00DDD8F41B56C75D00A2378A /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8EF1B56C75D00A2378A /* BalanceViewController.swift */; };
+		00DDD8F51B56C75D00A2378A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8F01B56C75D00A2378A /* HomeViewController.swift */; };
+		00DDD8F61B56C75D00A2378A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8F11B56C75D00A2378A /* LoginViewController.swift */; };
+		00DDD8F71B56C75D00A2378A /* online-banking-system.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00DDD8F21B56C75D00A2378A /* online-banking-system.jpg */; };
 		502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */; };
 		502CAECC1B56249400DE9261 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC91B56249400DE9261 /* Bill.swift */; };
 		502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */; };
@@ -37,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00DDD8EE1B56C75D00A2378A /* AccountTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTypeViewController.swift; sourceTree = "<group>"; };
+		00DDD8EF1B56C75D00A2378A /* BalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
+		00DDD8F01B56C75D00A2378A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		00DDD8F11B56C75D00A2378A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		00DDD8F21B56C75D00A2378A /* online-banking-system.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "online-banking-system.jpg"; sourceTree = "<group>"; };
 		502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayBillTableViewCell.swift; sourceTree = "<group>"; };
 		502CAEC91B56249400DE9261 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00DDD8F81B56C77400A2378A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				00DDD8F21B56C75D00A2378A /* online-banking-system.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		502CAECD1B562A1500DE9261 /* Design Pattern */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +209,7 @@
 		50306DDC1B55F8950080AC09 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				00DDD8F81B56C77400A2378A /* Images */,
 				50306DBE1B55F83C0080AC09 /* Main.storyboard */,
 				50306DDA1B55F88F0080AC09 /* Transaction.storyboard */,
 			);
@@ -200,6 +219,10 @@
 		50306DDD1B55F8A10080AC09 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				00DDD8EE1B56C75D00A2378A /* AccountTypeViewController.swift */,
+				00DDD8EF1B56C75D00A2378A /* BalanceViewController.swift */,
+				00DDD8F01B56C75D00A2378A /* HomeViewController.swift */,
+				00DDD8F11B56C75D00A2378A /* LoginViewController.swift */,
 				50306DBC1B55F83C0080AC09 /* ViewController.swift */,
 				50A330551B56023700029656 /* WithdrawViewController.swift */,
 				50A330571B56027500029656 /* TransactionCompleteViewController.swift */,
@@ -314,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50306DC01B55F83C0080AC09 /* Main.storyboard in Resources */,
+				00DDD8F71B56C75D00A2378A /* online-banking-system.jpg in Resources */,
 				50306DC51B55F83C0080AC09 /* LaunchScreen.xib in Resources */,
 				50306DC21B55F83C0080AC09 /* Images.xcassets in Resources */,
 				50306DDB1B55F88F0080AC09 /* Transaction.storyboard in Resources */,
@@ -334,15 +358,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00DDD8F31B56C75D00A2378A /* AccountTypeViewController.swift in Sources */,
 				502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */,
 				50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */,
 				502CAED71B5638A100DE9261 /* APIInterface.swift in Sources */,
 				502CAEDB1B56394A00DE9261 /* APIRemoteRealObject.swift in Sources */,
+				00DDD8F51B56C75D00A2378A /* HomeViewController.swift in Sources */,
+				00DDD8F41B56C75D00A2378A /* BalanceViewController.swift in Sources */,
 				50A3305A1B56029C00029656 /* TransactionFailViewController.swift in Sources */,
 				50A3305C1B56037E00029656 /* PayBillViewController.swift in Sources */,
 				50306DBD1B55F83C0080AC09 /* ViewController.swift in Sources */,
 				502CAED91B5638E400DE9261 /* APIProxy.swift in Sources */,
 				50A330561B56023700029656 /* WithdrawViewController.swift in Sources */,
+				00DDD8F61B56C75D00A2378A /* LoginViewController.swift in Sources */,
 				502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */,
 				502CAECC1B56249400DE9261 /* Bill.swift in Sources */,
 				50306DBB1B55F83C0080AC09 /* AppDelegate.swift in Sources */,
