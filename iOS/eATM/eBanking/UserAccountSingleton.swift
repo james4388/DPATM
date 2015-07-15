@@ -9,5 +9,53 @@
 import UIKit
 
 class UserAccountSingleton: NSObject {
-//    static var user
+    private static var instance : UserAccountSingleton!
+    
+    private var currentAccountNumber: String?
+    private var savingAccountNumber: String?
+    private var currentBalance: Double?
+    private var savingBalance: Double?
+    var accountType = 0
+    
+    private override init() {
+    }
+    
+    class func getInstance() -> UserAccountSingleton {
+        if (instance == nil) {
+            instance = UserAccountSingleton()
+        }
+        return instance
+    }
+    
+    func setCurrentAccountNumber(accountNumber: String) {
+        self.currentAccountNumber = accountNumber
+    }
+    
+    func getCurrentAccountNumber() -> String {
+        return currentAccountNumber!
+    }
+    
+    func setSavingAccountNumber(accountNumber: String) {
+        self.savingAccountNumber = accountNumber
+    }
+    
+    func getSavingAccountNumber() -> String {
+        return savingAccountNumber!
+    }
+    
+    func setSavingBalance(savingBalance: Double) {
+        self.savingBalance = savingBalance
+    }
+    
+    func getSavingBalance() -> Double {
+        return savingBalance!
+    }
+    
+    func setCurrentBalance(currentBalance: Double) {
+        self.currentBalance = currentBalance
+    }
+    
+    func getCurrentBalance() -> Double {
+        return currentBalance!
+    }
 }

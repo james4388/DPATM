@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cAh-0x-GWF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cAh-0x-GWF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -70,6 +70,7 @@
                         <outlet property="accountNumberTextField" destination="KMr-oY-Z5f" id="U56-td-jhf"/>
                         <outlet property="loginButton" destination="zlz-M1-eQ0" id="kNr-wO-bAl"/>
                         <outlet property="pinCodeTextField" destination="JdI-6O-sSv" id="81E-8U-nVK"/>
+                        <segue destination="2fP-2S-8ON" kind="show" identifier="AccountTypeViewController" id="ZGg-c0-K9y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,7 +89,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhY-v0-sXf">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhY-v0-sXf">
                                 <rect key="frame" x="220" y="242" width="160" height="59"/>
                                 <color key="backgroundColor" red="0.85150331440000004" green="0.14913378029999999" blue="0.023435264609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,13 +97,13 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your account:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-XW-Che">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose your account:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-XW-Che">
                                 <rect key="frame" x="216" y="98" width="169.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.71464646464646464" green="0.13075929049618001" blue="0.049842599496179266" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb4-G1-VAS">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb4-G1-VAS">
                                 <rect key="frame" x="220" y="151" width="160" height="59"/>
                                 <color key="backgroundColor" red="0.85150331440000004" green="0.14913378029999999" blue="0.023435264609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -135,6 +136,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bze-Ch-wDT"/>
+                    <connections>
+                        <segue destination="zAB-Ul-jcK" kind="show" identifier="AccountTypeViewController" id="2SA-Sm-Cui"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGR-xu-dCc" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,7 +156,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppz-mG-qDv">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppz-mG-qDv">
                                 <rect key="frame" x="412" y="215" width="172" height="52"/>
                                 <color key="backgroundColor" red="0.85150331440000004" green="0.14913378029999999" blue="0.023435264609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -170,7 +174,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh5-RN-aNI">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh5-RN-aNI">
                                 <rect key="frame" x="412" y="316" width="172" height="52"/>
                                 <color key="backgroundColor" red="0.85150331440000004" green="0.14913378029999999" blue="0.023435264609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -188,7 +192,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-ax-SP4">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-ax-SP4">
                                 <rect key="frame" x="16" y="114" width="172" height="52"/>
                                 <color key="backgroundColor" red="0.85150331440000004" green="0.14913378029999999" blue="0.023435264609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -206,7 +210,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiU-Yj-5HA">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiU-Yj-5HA">
                                 <rect key="frame" x="16" y="215" width="172" height="52"/>
                                 <color key="backgroundColor" red="0.85150331440000004" green="0.14913378029999999" blue="0.023435264609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -224,7 +228,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubv-Lc-1fn">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubv-Lc-1fn">
                                 <rect key="frame" x="16" y="316" width="172" height="52"/>
                                 <color key="backgroundColor" red="0.85150331440000004" green="0.14913378029999999" blue="0.023435264609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -242,7 +246,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZi-Ro-6Rs">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZi-Ro-6Rs">
                                 <rect key="frame" x="412" y="114" width="172" height="52"/>
                                 <color key="backgroundColor" red="0.85150331440000004" green="0.14913378029999999" blue="0.023435264609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
