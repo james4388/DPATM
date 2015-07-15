@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GpW-eh-OQa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cAh-0x-GWF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -75,24 +75,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="999" y="326"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="0cj-Xh-reN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GpW-eh-OQa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5UF-iV-gqP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3EO-X6-3Ds"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7r8-DA-WPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="245" y="-395"/>
         </scene>
         <!--Account Type View Controller-->
         <scene sceneID="l3l-ZS-79W">
@@ -201,8 +183,8 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="wVQ-be-rto"/>
                                         <exclude reference="Tf3-Ym-qa4"/>
+                                        <exclude reference="wVQ-be-rto"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -237,8 +219,8 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="zCJ-t8-vjM"/>
                                         <exclude reference="ZjB-kh-oEq"/>
+                                        <exclude reference="zCJ-t8-vjM"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -391,6 +373,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6t-Ew-idT" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2539" y="354"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J1g-OX-Ey4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cAh-0x-GWF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mGt-wJ-GKN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qxD-kD-TPZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTU-WE-Ic8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200" y="335"/>
         </scene>
     </scenes>
     <resources>
