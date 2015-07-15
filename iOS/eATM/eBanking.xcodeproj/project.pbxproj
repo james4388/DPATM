@@ -27,6 +27,11 @@
 		50306DD11B55F83C0080AC09 /* eBankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DD01B55F83C0080AC09 /* eBankingTests.swift */; };
 		50306DDB1B55F88F0080AC09 /* Transaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50306DDA1B55F88F0080AC09 /* Transaction.storyboard */; };
 		503E51D81B56C3DA00C37770 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E51D71B56C3DA00C37770 /* LoadingView.swift */; };
+		5082503F1B56F5EE0028C932 /* ATMMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082503E1B56F5EE0028C932 /* ATMMachine.swift */; };
+		508250411B56F6120028C932 /* ATMState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508250401B56F6120028C932 /* ATMState.swift */; };
+		508250431B56F6800028C932 /* RunOutOfMoneyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508250421B56F6800028C932 /* RunOutOfMoneyState.swift */; };
+		508250451B56F6CB0028C932 /* OutOfServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508250441B56F6CB0028C932 /* OutOfServiceState.swift */; };
+		508250471B56F9330028C932 /* ServicingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508250461B56F9330028C932 /* ServicingState.swift */; };
 		50A330561B56023700029656 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A330551B56023700029656 /* WithdrawViewController.swift */; };
 		50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A330571B56027500029656 /* TransactionCompleteViewController.swift */; };
 		50A3305A1B56029C00029656 /* TransactionFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A330591B56029C00029656 /* TransactionFailViewController.swift */; };
@@ -68,6 +73,11 @@
 		50306DD01B55F83C0080AC09 /* eBankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eBankingTests.swift; sourceTree = "<group>"; };
 		50306DDA1B55F88F0080AC09 /* Transaction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transaction.storyboard; sourceTree = "<group>"; };
 		503E51D71B56C3DA00C37770 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5082503E1B56F5EE0028C932 /* ATMMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMMachine.swift; sourceTree = "<group>"; };
+		508250401B56F6120028C932 /* ATMState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMState.swift; sourceTree = "<group>"; };
+		508250421B56F6800028C932 /* RunOutOfMoneyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunOutOfMoneyState.swift; sourceTree = "<group>"; };
+		508250441B56F6CB0028C932 /* OutOfServiceState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutOfServiceState.swift; sourceTree = "<group>"; };
+		508250461B56F9330028C932 /* ServicingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicingState.swift; sourceTree = "<group>"; };
 		50A330551B56023700029656 /* WithdrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		50A330571B56027500029656 /* TransactionCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCompleteViewController.swift; sourceTree = "<group>"; };
 		50A330591B56029C00029656 /* TransactionFailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionFailViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +123,6 @@
 			children = (
 				00DDD8F91B56C86300A2378A /* Singleton */,
 				502CAED51B56312700DE9261 /* Observer */,
-				502CAED41B5630F300DE9261 /* Visitor */,
 				502CAED31B5630A600DE9261 /* Command */,
 				502CAED21B56306E00DE9261 /* Proxy & Singleton & Facade */,
 				502CAED11B56305500DE9261 /* State */,
@@ -124,6 +133,11 @@
 		502CAED11B56305500DE9261 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				5082503E1B56F5EE0028C932 /* ATMMachine.swift */,
+				508250401B56F6120028C932 /* ATMState.swift */,
+				508250421B56F6800028C932 /* RunOutOfMoneyState.swift */,
+				508250441B56F6CB0028C932 /* OutOfServiceState.swift */,
+				508250461B56F9330028C932 /* ServicingState.swift */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -142,13 +156,6 @@
 			children = (
 			);
 			name = Command;
-			sourceTree = "<group>";
-		};
-		502CAED41B5630F300DE9261 /* Visitor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Visitor;
 			sourceTree = "<group>";
 		};
 		502CAED51B56312700DE9261 /* Observer */ = {
@@ -388,9 +395,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508250471B56F9330028C932 /* ServicingState.swift in Sources */,
+				508250431B56F6800028C932 /* RunOutOfMoneyState.swift in Sources */,
+				5082503F1B56F5EE0028C932 /* ATMMachine.swift in Sources */,
 				00DDD8F31B56C75D00A2378A /* AccountTypeViewController.swift in Sources */,
 				502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */,
 				50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */,
+				508250411B56F6120028C932 /* ATMState.swift in Sources */,
 				502CAED71B5638A100DE9261 /* APIInterface.swift in Sources */,
 				502CAEDB1B56394A00DE9261 /* APIRemoteRealObject.swift in Sources */,
 				00DDD8FC1B56C88D00A2378A /* UserAccountSingleton.swift in Sources */,
@@ -404,6 +415,7 @@
 				00DDD8F61B56C75D00A2378A /* LoginViewController.swift in Sources */,
 				502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */,
 				502CAECC1B56249400DE9261 /* Bill.swift in Sources */,
+				508250451B56F6CB0028C932 /* OutOfServiceState.swift in Sources */,
 				503E51D81B56C3DA00C37770 /* LoadingView.swift in Sources */,
 				50306DBB1B55F83C0080AC09 /* AppDelegate.swift in Sources */,
 			);

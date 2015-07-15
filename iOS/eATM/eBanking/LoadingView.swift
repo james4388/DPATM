@@ -13,7 +13,7 @@ class LoadingView: NSObject {
     
     private var activityView : UIActivityIndicatorView
     
-    override init() {
+    private override init() {
         activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
         activityView.color = UIColor.redColor()
         activityView.hidesWhenStopped = true
@@ -39,10 +39,12 @@ class LoadingView: NSObject {
     }
     
     func startLoading(){
+        activityView.superview?.userInteractionEnabled = false
         activityView.startAnimating()
     }
     
     func stopLoading(){
+        activityView.superview?.userInteractionEnabled = true
         activityView.stopAnimating()
     }
 }
