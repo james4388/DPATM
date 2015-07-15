@@ -75,8 +75,48 @@
 		502CAECD1B562A1500DE9261 /* Design Pattern */ = {
 			isa = PBXGroup;
 			children = (
+				502CAED51B56312700DE9261 /* Observer */,
+				502CAED41B5630F300DE9261 /* Visitor */,
+				502CAED31B5630A600DE9261 /* Command */,
+				502CAED21B56306E00DE9261 /* Proxy & Singleton */,
+				502CAED11B56305500DE9261 /* State */,
 			);
 			name = "Design Pattern";
+			sourceTree = "<group>";
+		};
+		502CAED11B56305500DE9261 /* State */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = State;
+			sourceTree = "<group>";
+		};
+		502CAED21B56306E00DE9261 /* Proxy & Singleton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Proxy & Singleton";
+			sourceTree = "<group>";
+		};
+		502CAED31B5630A600DE9261 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Command;
+			sourceTree = "<group>";
+		};
+		502CAED41B5630F300DE9261 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Visitor;
+			sourceTree = "<group>";
+		};
+		502CAED51B56312700DE9261 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Observer;
 			sourceTree = "<group>";
 		};
 		50306DAC1B55F83C0080AC09 = {
