@@ -10,9 +10,35 @@ import UIKit
 
 class APIProxy: NSObject, APIInteface {
     
-    var realObject : APIRealObject!
+    private var realObject : APIRemoteRealObject!
     
-    override init() {
+    private class var instance : APIProxy{
+        struct Singleton {
+            static let instance = APIProxy()
+        }
+        return Singleton.instance
+    }
+    
+    class func sharedInstance() -> APIProxy{
+        return instance
+    }
+    
+    private override init() {
         super.init()
+        realObject = APIRemoteRealObject()
+    }
+    
+    //MARK: implement APIInterface
+    func login(username: String!, password: String!, completionBlock: APICompletionHandler) {
+        
+        // show loading view
+        
+        realObject.login(username, password: password) { (response: NSDictionary!, error : NSError!) -> () in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                completionBlock(response, error)
+            })
+        }
     }
 }

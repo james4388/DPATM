@@ -8,6 +8,10 @@
 
 import Foundation
 
+typealias APICompletionHandler = (NSDictionary!, NSError!) -> ()
+
 protocol APIInteface{
 
+    func login(username: String!, password: String!, completionBlock : APICompletionHandler)
+    
 }
