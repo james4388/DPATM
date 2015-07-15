@@ -70,6 +70,7 @@
                         <outlet property="accountNumberTextField" destination="KMr-oY-Z5f" id="U56-td-jhf"/>
                         <outlet property="loginButton" destination="zlz-M1-eQ0" id="kNr-wO-bAl"/>
                         <outlet property="pinCodeTextField" destination="JdI-6O-sSv" id="81E-8U-nVK"/>
+                        <segue destination="2fP-2S-8ON" kind="show" identifier="AccountTypeViewController" id="ZGg-c0-K9y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,6 +154,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bze-Ch-wDT"/>
+                    <connections>
+                        <segue destination="zAB-Ul-jcK" kind="show" identifier="AccountTypeViewController" id="2SA-Sm-Cui"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGR-xu-dCc" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,8 +205,8 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="wVQ-be-rto"/>
                                         <exclude reference="Tf3-Ym-qa4"/>
+                                        <exclude reference="wVQ-be-rto"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -237,8 +241,8 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="zCJ-t8-vjM"/>
                                         <exclude reference="ZjB-kh-oEq"/>
+                                        <exclude reference="zCJ-t8-vjM"/>
                                     </mask>
                                 </variation>
                             </button>
