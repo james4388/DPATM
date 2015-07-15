@@ -9,8 +9,6 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    //static var accountNumber: String
     
     @IBOutlet weak var accountNumberTextField: UITextField!
     
