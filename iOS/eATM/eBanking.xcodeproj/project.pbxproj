@@ -10,6 +10,9 @@
 		502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */; };
 		502CAECC1B56249400DE9261 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC91B56249400DE9261 /* Bill.swift */; };
 		502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */; };
+		502CAED71B5638A100DE9261 /* APIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAED61B5638A100DE9261 /* APIInterface.swift */; };
+		502CAED91B5638E400DE9261 /* APIProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAED81B5638E400DE9261 /* APIProxy.swift */; };
+		502CAEDB1B56394A00DE9261 /* APIRealObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEDA1B56394A00DE9261 /* APIRealObject.swift */; };
 		50306DBB1B55F83C0080AC09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DBA1B55F83C0080AC09 /* AppDelegate.swift */; };
 		50306DBD1B55F83C0080AC09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DBC1B55F83C0080AC09 /* ViewController.swift */; };
 		50306DC01B55F83C0080AC09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50306DBE1B55F83C0080AC09 /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 		502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayBillTableViewCell.swift; sourceTree = "<group>"; };
 		502CAEC91B56249400DE9261 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
+		502CAED61B5638A100DE9261 /* APIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInterface.swift; sourceTree = "<group>"; };
+		502CAED81B5638E400DE9261 /* APIProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIProxy.swift; sourceTree = "<group>"; };
+		502CAEDA1B56394A00DE9261 /* APIRealObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRealObject.swift; sourceTree = "<group>"; };
 		50306DB51B55F83C0080AC09 /* eBanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50306DB91B55F83C0080AC09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50306DBA1B55F83C0080AC09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +100,9 @@
 		502CAED21B56306E00DE9261 /* Proxy & Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				502CAED61B5638A100DE9261 /* APIInterface.swift */,
+				502CAED81B5638E400DE9261 /* APIProxy.swift */,
+				502CAEDA1B56394A00DE9261 /* APIRealObject.swift */,
 			);
 			name = "Proxy & Singleton";
 			sourceTree = "<group>";
@@ -327,9 +336,12 @@
 			files = (
 				502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */,
 				50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */,
+				502CAED71B5638A100DE9261 /* APIInterface.swift in Sources */,
+				502CAEDB1B56394A00DE9261 /* APIRealObject.swift in Sources */,
 				50A3305A1B56029C00029656 /* TransactionFailViewController.swift in Sources */,
 				50A3305C1B56037E00029656 /* PayBillViewController.swift in Sources */,
 				50306DBD1B55F83C0080AC09 /* ViewController.swift in Sources */,
+				502CAED91B5638E400DE9261 /* APIProxy.swift in Sources */,
 				50A330561B56023700029656 /* WithdrawViewController.swift in Sources */,
 				502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */,
 				502CAECC1B56249400DE9261 /* Bill.swift in Sources */,
