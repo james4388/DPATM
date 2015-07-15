@@ -30,7 +30,35 @@ class LoginViewController: UIViewController {
     func solveLoginButtonClick(sender: UIButton!) {
         var accountNumber = accountNumberTextField.text
         var pinCode = pinCodeTextField.text
-        
+        APIProxy.sharedInstance().login(accountNumber, password: pinCode, completionBlock: { (json: NSDictionary!, error: NSError!) -> () in
+            if error != nil {
+                AlertSingleton.getInstance().showAlert(self, message: "Login failed, try again!")
+            } else {
+                var returnObject: LoginReturnObject
+                returnObject = Mapper<LoginReturnObject>().map(json)!
+                if returnObject.result == "OK" {
+                    var account1 = returnObject.user?.accounts![0]
+                    var account2 = returnObject.user?.accounts![1]
+                    if account1?.type == "Saving" {
+                        var user = UserAccountSingleton.getInstance()
+                        user.setCurrentAccountNumber(account2!.accountID!)
+                        user.setCurrentBalance(account2!.balance!)
+                        user.setSavingAccountNumber(account1!.accountID!)
+                        user.setSavingBalance(account1!.balance!)
+                    } else {
+                        var user = UserAccountSingleton.getInstance()
+                        user.setCurrentAccountNumber(account1!.accountID!)
+                        user.setCurrentBalance(account1!.balance!)
+                        user.setSavingAccountNumber(account2!.accountID!)
+                        user.setSavingBalance(account2!.balance!)
+                    }
+                    self.performSegueWithIdentifier("AccountTypeViewController", sender:self)
+                } else {
+                    AlertSingleton.getInstance().showAlert(self, message: "Login failed, try again!")
+                }
+
+            }
+        })
     }
     /*
     // MARK: - Navigation
