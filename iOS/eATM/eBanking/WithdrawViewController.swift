@@ -10,10 +10,19 @@ import UIKit
 
 class WithdrawViewController: UIViewController {
 
+    @IBOutlet weak var amountTextField: UITextField!
+    
+    @IBOutlet weak var otpCodeTextField: UITextField!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        submitButton.layer.cornerRadius = 5;
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +40,13 @@ class WithdrawViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func didTouchedOnSubmitButton(sender: UIButton) {
+        view.endEditing(true)
+        
+        // submit to Web service and navigate to Transaction Complete/Transaction Fail
+        performSegueWithIdentifier("TransactionFailViewController", sender: self)
+    }
 
 }

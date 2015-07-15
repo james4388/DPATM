@@ -1,7 +1,387 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3uB-DH-sMu">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Withdraw-->
+        <scene sceneID="HXi-Sp-RSt">
+            <objects>
+                <viewController storyboardIdentifier="WithdrawViewController" title="Withdraw" id="dZx-Tk-paf" customClass="WithdrawViewController" customModule="eBanking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Vs-fW-M3K"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cir-QT-huB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RCT-m4-1dN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXe-3b-pml">
+                                <rect key="frame" x="150" y="80" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RML-mA-Ik2"/>
+                                    <constraint firstAttribute="width" constant="300" id="WN9-Ao-ZL4"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="OTP Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8E-R2-RFT">
+                                <rect key="frame" x="150" y="160" width="300" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idT-xh-v2N">
+                                <rect key="frame" x="175" y="250" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.77647058823529413" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dV6-NF-4gb"/>
+                                    <constraint firstAttribute="width" constant="250" id="uFG-5X-p8F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchedOnSubmitButton:" destination="dZx-Tk-paf" eventType="touchUpInside" id="hxR-Dg-hTY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gXe-3b-pml" firstAttribute="height" secondItem="g8E-R2-RFT" secondAttribute="height" id="8WX-3T-dcE"/>
+                            <constraint firstAttribute="centerX" secondItem="gXe-3b-pml" secondAttribute="centerX" id="9fJ-aG-lIO"/>
+                            <constraint firstItem="idT-xh-v2N" firstAttribute="top" secondItem="g8E-R2-RFT" secondAttribute="bottom" constant="40" id="Oli-Az-DWJ"/>
+                            <constraint firstItem="g8E-R2-RFT" firstAttribute="top" secondItem="gXe-3b-pml" secondAttribute="bottom" constant="30" id="WZi-Qh-S1O"/>
+                            <constraint firstAttribute="centerX" secondItem="idT-xh-v2N" secondAttribute="centerX" id="YFU-Yl-ITc"/>
+                            <constraint firstItem="gXe-3b-pml" firstAttribute="centerX" secondItem="g8E-R2-RFT" secondAttribute="centerX" id="ekn-dD-dG3"/>
+                            <constraint firstItem="gXe-3b-pml" firstAttribute="width" secondItem="g8E-R2-RFT" secondAttribute="width" id="hst-mC-uOj"/>
+                            <constraint firstItem="gXe-3b-pml" firstAttribute="top" secondItem="7Vs-fW-M3K" secondAttribute="bottom" constant="80" id="zbD-5b-xGU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Withdraw" id="IbW-97-n8f"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="amountTextField" destination="gXe-3b-pml" id="fLD-Bf-xSh"/>
+                        <outlet property="otpCodeTextField" destination="g8E-R2-RFT" id="kmb-Ld-gRv"/>
+                        <outlet property="submitButton" destination="idT-xh-v2N" id="YWL-md-Ep0"/>
+                        <segue destination="1G9-aa-Afv" kind="show" identifier="TransactionCompleteViewController" id="Dvb-ut-HbM"/>
+                        <segue destination="hEo-Sn-KmH" kind="show" identifier="TransactionFailViewController" id="0NZ-W5-W9i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2d-ek-89n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="335"/>
+        </scene>
+        <!--Transaction Complete-->
+        <scene sceneID="I0i-DQ-EJj">
+            <objects>
+                <viewController storyboardIdentifier="TransactionCompleteViewController" title="Transaction Complete" id="1G9-aa-Afv" customClass="TransactionCompleteViewController" customModule="eBanking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cVs-zk-qgf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ibb-yN-xre"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nYt-cc-Z8U">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your transaction is complete." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95B-CE-yoD">
+                                <rect key="frame" x="20" y="90" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to perform another transaction?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbG-4d-vx9">
+                                <rect key="frame" x="20" y="139.5" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-Cn-ete">
+                                <rect key="frame" x="20" y="219.5" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2uW-UC-iJE"/>
+                                    <constraint firstAttribute="width" constant="200" id="Gfe-bI-sUZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="PRINT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchedOnSubmitButton:" destination="dZx-Tk-paf" eventType="touchUpInside" id="Vjt-6V-FxV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmP-p8-2qS">
+                                <rect key="frame" x="380" y="219.5" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qjg-3O-c0x"/>
+                                    <constraint firstAttribute="width" constant="200" id="wrI-jo-XPQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="YES">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchedOnSubmitButton:" destination="dZx-Tk-paf" eventType="touchUpInside" id="Q2j-93-GLH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="via-h4-Ats">
+                                <rect key="frame" x="380" y="319.5" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LJn-xz-dkx"/>
+                                    <constraint firstAttribute="height" constant="50" id="zau-mu-wgO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="NO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchedOnSubmitButton:" destination="dZx-Tk-paf" eventType="touchUpInside" id="png-Me-KRV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WhC-Cn-ete" firstAttribute="top" secondItem="AbG-4d-vx9" secondAttribute="bottom" constant="50" id="1uT-q6-uvn"/>
+                            <constraint firstItem="via-h4-Ats" firstAttribute="top" secondItem="QmP-p8-2qS" secondAttribute="bottom" constant="50" id="1vo-iN-6lD"/>
+                            <constraint firstAttribute="centerX" secondItem="95B-CE-yoD" secondAttribute="centerX" id="6xi-Yf-uVi"/>
+                            <constraint firstItem="95B-CE-yoD" firstAttribute="leading" secondItem="nYt-cc-Z8U" secondAttribute="leading" constant="20" id="8sC-qz-ftv"/>
+                            <constraint firstAttribute="trailing" secondItem="95B-CE-yoD" secondAttribute="trailing" constant="20" id="BKU-9M-mNZ"/>
+                            <constraint firstItem="AbG-4d-vx9" firstAttribute="leading" secondItem="nYt-cc-Z8U" secondAttribute="leading" constant="20" id="Bh3-L8-tK6"/>
+                            <constraint firstItem="95B-CE-yoD" firstAttribute="top" secondItem="cVs-zk-qgf" secondAttribute="bottom" constant="90" id="CN2-yc-tsa"/>
+                            <constraint firstItem="WhC-Cn-ete" firstAttribute="leading" secondItem="nYt-cc-Z8U" secondAttribute="leading" constant="20" id="PI3-8r-xr5"/>
+                            <constraint firstAttribute="trailing" secondItem="AbG-4d-vx9" secondAttribute="trailing" constant="20" id="RHf-EC-Usx"/>
+                            <constraint firstItem="QmP-p8-2qS" firstAttribute="centerY" secondItem="WhC-Cn-ete" secondAttribute="centerY" id="Z8X-tO-sVI"/>
+                            <constraint firstAttribute="centerX" secondItem="AbG-4d-vx9" secondAttribute="centerX" id="a2x-zy-OZr"/>
+                            <constraint firstAttribute="trailing" secondItem="QmP-p8-2qS" secondAttribute="trailing" constant="20" id="kLT-sk-F6e"/>
+                            <constraint firstItem="via-h4-Ats" firstAttribute="trailing" secondItem="QmP-p8-2qS" secondAttribute="trailing" id="tln-n9-Yte"/>
+                            <constraint firstItem="AbG-4d-vx9" firstAttribute="top" secondItem="95B-CE-yoD" secondAttribute="bottom" constant="20" id="xyW-ET-Iic"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxc-fv-SSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="1092"/>
+        </scene>
+        <!--Pay Bill-->
+        <scene sceneID="fFE-Sw-ISx">
+            <objects>
+                <viewController storyboardIdentifier="PayBillViewController" title="Pay Bill" id="ez2-Ui-pze" customClass="PayBillViewController" customModule="eBanking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1eA-rg-9lK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gma-uo-3dO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i9K-Jb-7Ap">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UKs-wn-XRN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill to pay" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJh-Lz-sv1">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" red="0.79908647489999995" green="0.085557807979999997" blue="0.13494898289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                    <color key="textColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PayBillTableViewCell" rowHeight="85" id="zah-ZC-NwC" customClass="PayBillTableViewCell" customModule="eBanking" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zah-ZC-NwC" id="XvN-Bl-eFl">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFD-0F-xGj">
+                                                    <rect key="frame" x="175" y="34.5" width="250" height="50"/>
+                                                    <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="U7g-a1-zPh"/>
+                                                        <constraint firstAttribute="width" constant="250" id="oq2-on-hB2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <state key="normal" title="Submit">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didTouchedOnBillItem:" destination="ez2-Ui-pze" eventType="touchUpInside" id="hB4-1f-Hxt"/>
+                                                        <action selector="didTouchedOnSubmitButton:" destination="dZx-Tk-paf" eventType="touchUpInside" id="QNk-xh-6Cj"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="KFD-0F-xGj" secondAttribute="bottom" id="VHw-dj-lek"/>
+                                                <constraint firstAttribute="centerX" secondItem="KFD-0F-xGj" secondAttribute="centerX" id="gKs-mv-ECc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="billButton" destination="KFD-0F-xGj" id="P3K-ed-r91"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ez2-Ui-pze" id="eQV-9u-zIt"/>
+                                    <outlet property="delegate" destination="ez2-Ui-pze" id="Co9-jG-pFJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UKs-wn-XRN" firstAttribute="top" secondItem="i9K-Jb-7Ap" secondAttribute="top" id="Fku-Qj-TO3"/>
+                            <constraint firstAttribute="trailing" secondItem="UKs-wn-XRN" secondAttribute="trailing" id="dc2-g0-JnD"/>
+                            <constraint firstItem="Gma-uo-3dO" firstAttribute="top" secondItem="UKs-wn-XRN" secondAttribute="bottom" id="fIu-PA-im2"/>
+                            <constraint firstItem="UKs-wn-XRN" firstAttribute="leading" secondItem="i9K-Jb-7Ap" secondAttribute="leading" id="hVJ-Kd-m1P"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pay Bill" id="MYg-pw-WZF"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="headerLabel" destination="eJh-Lz-sv1" id="t3U-DB-hOH"/>
+                        <outlet property="tableView" destination="UKs-wn-XRN" id="lQm-to-gHd"/>
+                        <segue destination="1G9-aa-Afv" kind="show" identifier="TransactionCompleteViewController" id="KWP-xz-fem"/>
+                        <segue destination="hEo-Sn-KmH" kind="show" identifier="TransactionFailViewController" id="OBr-2G-l4q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEd-p7-IeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="1490"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="90y-Q8-b8T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3uB-DH-sMu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dRp-9U-dAt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ez2-Ui-pze" kind="relationship" relationship="rootViewController" id="TEL-hO-D90"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pM-5f-mF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200" y="335"/>
+        </scene>
+        <!--Transaction Fail-->
+        <scene sceneID="XPm-dB-ni5">
+            <objects>
+                <viewController storyboardIdentifier="TransactionFailViewController" title="Transaction Fail" id="hEo-Sn-KmH" customClass="TransactionFailViewController" customModule="eBanking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a23-2D-2JS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Byl-AF-t43"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6sC-5Z-bIa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are sorry. We are unable to process your transaction at this time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQK-Rr-xDU">
+                                <rect key="frame" x="120" y="90" width="360" height="89.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to perform another transaction?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEM-zK-Icg">
+                                <rect key="frame" x="20" y="199.5" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT6-MZ-riz">
+                                <rect key="frame" x="20" y="279.5" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Bai-gw-HZM"/>
+                                    <constraint firstAttribute="width" constant="200" id="nbf-9K-BTh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="PRINT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchedOnSubmitButton:" destination="dZx-Tk-paf" eventType="touchUpInside" id="xhg-ur-pgr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hC8-zC-XwM">
+                                <rect key="frame" x="380" y="279.5" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Cif-to-Hdm"/>
+                                    <constraint firstAttribute="height" constant="50" id="xoh-mc-3gq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="YES">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchedOnSubmitButton:" destination="dZx-Tk-paf" eventType="touchUpInside" id="Edf-me-dyb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mc7-6D-l9r">
+                                <rect key="frame" x="380" y="379.5" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="305-pD-mft"/>
+                                    <constraint firstAttribute="width" constant="200" id="8i8-wd-ezl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="NO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchedOnSubmitButton:" destination="dZx-Tk-paf" eventType="touchUpInside" id="i5i-vJ-yFo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NQK-Rr-xDU" firstAttribute="top" secondItem="a23-2D-2JS" secondAttribute="bottom" constant="90" id="4Nt-Sc-7OW"/>
+                            <constraint firstItem="dT6-MZ-riz" firstAttribute="top" secondItem="HEM-zK-Icg" secondAttribute="bottom" constant="50" id="7ZG-PG-UFK"/>
+                            <constraint firstAttribute="trailing" secondItem="HEM-zK-Icg" secondAttribute="trailing" constant="20" id="Ahj-QA-Pr6"/>
+                            <constraint firstItem="HEM-zK-Icg" firstAttribute="leading" secondItem="6sC-5Z-bIa" secondAttribute="leading" constant="20" id="QhG-ab-Tcj"/>
+                            <constraint firstItem="mc7-6D-l9r" firstAttribute="top" secondItem="hC8-zC-XwM" secondAttribute="bottom" constant="50" id="ZXn-Nk-JdI"/>
+                            <constraint firstItem="NQK-Rr-xDU" firstAttribute="leading" secondItem="6sC-5Z-bIa" secondAttribute="leading" constant="120" id="aw3-Xa-OXY"/>
+                            <constraint firstItem="dT6-MZ-riz" firstAttribute="leading" secondItem="6sC-5Z-bIa" secondAttribute="leading" constant="20" id="dbJ-EZ-vrO"/>
+                            <constraint firstAttribute="trailing" secondItem="hC8-zC-XwM" secondAttribute="trailing" constant="20" id="fEF-W0-WzJ"/>
+                            <constraint firstAttribute="centerX" secondItem="HEM-zK-Icg" secondAttribute="centerX" id="ndc-Ea-5fn"/>
+                            <constraint firstItem="hC8-zC-XwM" firstAttribute="centerY" secondItem="dT6-MZ-riz" secondAttribute="centerY" id="vou-92-5rG"/>
+                            <constraint firstAttribute="centerX" secondItem="NQK-Rr-xDU" secondAttribute="centerX" id="yDt-Ix-KyH"/>
+                            <constraint firstItem="HEM-zK-Icg" firstAttribute="top" secondItem="NQK-Rr-xDU" secondAttribute="bottom" constant="20" id="zGw-qw-XTi"/>
+                            <constraint firstAttribute="trailing" secondItem="NQK-Rr-xDU" secondAttribute="trailing" constant="120" id="zOg-2g-uoI"/>
+                            <constraint firstItem="mc7-6D-l9r" firstAttribute="trailing" secondItem="hC8-zC-XwM" secondAttribute="trailing" id="zrJ-tM-QDE"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CeU-F7-LLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="1763"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dvb-ut-HbM"/>
+        <segue reference="0NZ-W5-W9i"/>
+    </inferredMetricsTieBreakers>
 </document>

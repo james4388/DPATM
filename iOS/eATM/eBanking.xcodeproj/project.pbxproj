@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */; };
+		502CAECC1B56249400DE9261 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC91B56249400DE9261 /* Bill.swift */; };
 		50306DBB1B55F83C0080AC09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DBA1B55F83C0080AC09 /* AppDelegate.swift */; };
 		50306DBD1B55F83C0080AC09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DBC1B55F83C0080AC09 /* ViewController.swift */; };
 		50306DC01B55F83C0080AC09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50306DBE1B55F83C0080AC09 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayBillTableViewCell.swift; sourceTree = "<group>"; };
+		502CAEC91B56249400DE9261 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		50306DB51B55F83C0080AC09 /* eBanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50306DB91B55F83C0080AC09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50306DBA1B55F83C0080AC09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		50306DDE1B55F8B50080AC09 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				502CAEC91B56249400DE9261 /* Bill.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 		50306DDF1B55F8BA0080AC09 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				50A3305C1B56037E00029656 /* PayBillViewController.swift in Sources */,
 				50306DBD1B55F83C0080AC09 /* ViewController.swift in Sources */,
 				50A330561B56023700029656 /* WithdrawViewController.swift in Sources */,
+				502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */,
+				502CAECC1B56249400DE9261 /* Bill.swift in Sources */,
 				50306DBB1B55F83C0080AC09 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
