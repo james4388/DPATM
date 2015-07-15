@@ -57,8 +57,13 @@ class PayBillViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         tableView.reloadData()
         
+        var random = arc4random_uniform(5)
+        if random % 2 == 1{
+            performSegueWithIdentifier("TransactionCompleteViewController", sender: self)
+        }else{
+            performSegueWithIdentifier("TransactionFailViewController", sender: self)
+        }
         
-        performSegueWithIdentifier("TransactionCompleteViewController", sender: self)
     }
 
     //MARK: UITableViewDelegate, UITableViewDataSource

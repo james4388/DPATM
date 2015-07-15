@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */; };
 		502CAECC1B56249400DE9261 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC91B56249400DE9261 /* Bill.swift */; };
+		502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */; };
 		50306DBB1B55F83C0080AC09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DBA1B55F83C0080AC09 /* AppDelegate.swift */; };
 		50306DBD1B55F83C0080AC09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DBC1B55F83C0080AC09 /* ViewController.swift */; };
 		50306DC01B55F83C0080AC09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50306DBE1B55F83C0080AC09 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayBillTableViewCell.swift; sourceTree = "<group>"; };
 		502CAEC91B56249400DE9261 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		50306DB51B55F83C0080AC09 /* eBanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50306DB91B55F83C0080AC09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50306DBA1B55F83C0080AC09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502CAECD1B562A1500DE9261 /* Design Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Design Pattern";
+			sourceTree = "<group>";
+		};
 		50306DAC1B55F83C0080AC09 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +100,7 @@
 		50306DB71B55F83C0080AC09 /* eBanking */ = {
 			isa = PBXGroup;
 			children = (
+				502CAECD1B562A1500DE9261 /* Design Pattern */,
 				50A3305D1B56043700029656 /* Custom */,
 				50306DDE1B55F8B50080AC09 /* Models */,
 				50306DDF1B55F8BA0080AC09 /* Views */,
@@ -146,6 +156,7 @@
 				50A330571B56027500029656 /* TransactionCompleteViewController.swift */,
 				50A330591B56029C00029656 /* TransactionFailViewController.swift */,
 				50A3305B1B56037E00029656 /* PayBillViewController.swift */,
+				502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -274,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */,
 				50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */,
 				50A3305A1B56029C00029656 /* TransactionFailViewController.swift in Sources */,
 				50A3305C1B56037E00029656 /* PayBillViewController.swift in Sources */,

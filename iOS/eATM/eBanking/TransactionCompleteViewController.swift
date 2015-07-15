@@ -32,4 +32,18 @@ class TransactionCompleteViewController: UIViewController {
     }
     */
 
+    @IBAction func print(sender: UIButton) {
+        // send Prind command to server
+    }
+    
+    
+    @IBAction func yes(sender: UIButton) {
+        // go back Home screen
+    }
+    
+    @IBAction func no(sender: UIButton) {
+        // return card
+    }
+    
+    
 }

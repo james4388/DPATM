@@ -1,14 +1,14 @@
 //
-//  TransactionFailViewController.swift
+//  ThankYouViewController.swift
 //  eBanking
 //
-//  Created by Tai Huu Ho on 7/14/15.
+//  Created by Tai Huu Ho on 7/15/15.
 //  Copyright (c) 2015 Tai Huu Ho. All rights reserved.
 //
 
 import UIKit
 
-class TransactionFailViewController: UIViewController {
+class ThankYouViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +32,4 @@ class TransactionFailViewController: UIViewController {
     }
     */
 
-    @IBAction func print(sender: UIButton) {
-        // send Prind command to server
-    }
-    
-    
-    @IBAction func yes(sender: UIButton) {
-        // go back Home screen
-    }
-    
-    @IBAction func no(sender: UIButton) {
-        // return card
-    }
 }
