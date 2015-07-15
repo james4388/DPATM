@@ -13,6 +13,7 @@
 		00DDD8F61B56C75D00A2378A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8F11B56C75D00A2378A /* LoginViewController.swift */; };
 		00DDD8F71B56C75D00A2378A /* online-banking-system.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00DDD8F21B56C75D00A2378A /* online-banking-system.jpg */; };
 		00DDD8FC1B56C88D00A2378A /* UserAccountSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8FB1B56C88D00A2378A /* UserAccountSingleton.swift */; };
+		00DDD8FE1B56CE2D00A2378A /* AlertSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8FD1B56CE2D00A2378A /* AlertSingleton.swift */; };
 		502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */; };
 		502CAECC1B56249400DE9261 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC91B56249400DE9261 /* Bill.swift */; };
 		502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */; };
@@ -50,6 +51,7 @@
 		00DDD8F11B56C75D00A2378A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00DDD8F21B56C75D00A2378A /* online-banking-system.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "online-banking-system.jpg"; sourceTree = "<group>"; };
 		00DDD8FB1B56C88D00A2378A /* UserAccountSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountSingleton.swift; sourceTree = "<group>"; };
+		00DDD8FD1B56CE2D00A2378A /* AlertSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSingleton.swift; sourceTree = "<group>"; };
 		502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayBillTableViewCell.swift; sourceTree = "<group>"; };
 		502CAEC91B56249400DE9261 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				00DDD8FB1B56C88D00A2378A /* UserAccountSingleton.swift */,
+				00DDD8FD1B56CE2D00A2378A /* AlertSingleton.swift */,
 			);
 			name = Singleton;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00DDD8F31B56C75D00A2378A /* AccountTypeViewController.swift in Sources */,
+				00DDD8FE1B56CE2D00A2378A /* AlertSingleton.swift in Sources */,
 				502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */,
 				50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */,
 				502CAED71B5638A100DE9261 /* APIInterface.swift in Sources */,

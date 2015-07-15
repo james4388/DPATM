@@ -30,7 +30,14 @@ class LoginViewController: UIViewController {
     func solveLoginButtonClick(sender: UIButton!) {
         var accountNumber = accountNumberTextField.text
         var pinCode = pinCodeTextField.text
-        
+        APIProxy.sharedInstance().login(accountNumber, password: pinCode, completionBlock: { (json: NSDictionary!, error: NSError!) -> () in
+            if error != nil {
+                AlertSingleton.getInstance().showAlert(self, message: "Login failed, try again!")
+            } else {
+                UserAccountSingleton.getInstance().setAccountNumber(accountNumber)
+                self.performSegueWithIdentifier("AccountTypeViewController", sender:self)
+            }
+        })
     }
     /*
     // MARK: - Navigation
