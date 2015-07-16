@@ -16,6 +16,9 @@ class WithdrawViewController: UIViewController {
     
     @IBOutlet weak var submitButton: UIButton!
     
+    var amount : Double?
+    
+    var challengeID : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,14 @@ class WithdrawViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         submitButton.layer.cornerRadius = 5;
+        
+        if let amount = amount{
+            amountTextField.text = String(format: "%f", amount)
+            amountTextField.userInteractionEnabled = false
+            
+        }
+        
+        getOTP()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,12 +52,36 @@ class WithdrawViewController: UIViewController {
     }
     */
     
+    private func getOTP(){
+    
+        APIProxy.sharedInstance().getOTP(ATMMachine.sharedInstance().atmID, accountID: UserAccountSingleton.getInstance().currentAccount?.accountId) { (json : NSDictionary!, error : NSError!) -> Void in
+            if error == nil{
+                if let subJson = json["challenge"] as? NSDictionary{
+                    self.challengeID = subJson["challengeId"] as? String
+                    
+                    AlertSingleton.getInstance().showAlert(self, message: "An OTP Code is sent to your email. Please check and get OTP Code in order to proceed this transaction")
+                }
+                
+            }else{
+                self.challengeID = nil
+            }
+        }
+    }
     
     @IBAction func didTouchedOnSubmitButton(sender: UIButton) {
         view.endEditing(true)
-        
         // submit to Web service and navigate to Transaction Complete/Transaction Fail
-        performSegueWithIdentifier("TransactionFailViewController", sender: self)
+        APIProxy.sharedInstance().withdraw(amountTextField.text, accountId: UserAccountSingleton.getInstance().currentAccount?.accountId, challengID: self.challengeID, otpCode: otpCodeTextField.text, atmID: ATMMachine.sharedInstance().atmID) { (json : NSDictionary!, error : NSError!) -> Void in
+            if error == nil{
+                self.performSegueWithIdentifier("TransactionCompleteViewController", sender: self)
+            }else{
+                if let message = error.userInfo![NSLocalizedDescriptionKey] as? String{
+                    AlertSingleton.getInstance().showAlert(self, message: message)
+                }
+                
+            }
+        }
+        
     }
 
 }

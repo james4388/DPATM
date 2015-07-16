@@ -27,10 +27,14 @@ class AccountTypeViewController: UIViewController {
     
     func solveCurrentAccountButtonClick(sender: UIButton!) {
         UserAccountSingleton.getInstance().accountType = 0
+        UserAccountSingleton.getInstance().currentAccount = ATMAccountFactory.factory().createAccount(0)
         self.performSegueWithIdentifier("HomeViewController", sender:self)
     }
+    
     func solveSavingAccountButtonClick(sender: UIButton!) {
         UserAccountSingleton.getInstance().accountType = 1
+        UserAccountSingleton.getInstance().currentAccount = ATMAccountFactory.factory().createAccount(1)
+        
         self.performSegueWithIdentifier("HomeViewController", sender:self)
     }
     /*

@@ -25,4 +25,8 @@ protocol APIInteface{
     
     func payBill(billID : String!, atmID : String!, accountID : String!, completionBlock handler : APICompletionHandler)
     
+    func getOTP(atmID: String!, accountID: String!, completionBlock handler : APICompletionHandler)
+    
+    func withdraw(amount : String!, accountId : String!, challengID : String!, otpCode : String!, atmID : String!, completionBlock handler : APICompletionHandler)
+    
 }

@@ -26,11 +26,14 @@ class ATMAccountFactory: NSObject,IAccountFactory {
         super.init()
     }
     
-    func createAccount(type : String!) -> IAccount{
-        if type == "Saving"{
-            return SavingAccount()
-        }else{
-            return CurrentAccount()
+    func createAccount(type : Int!) -> IAccount?{
+        if let accounts = UserAccountSingleton.getInstance().userInfo?.user?.accounts as [AccountLoginObject]?{
+            if type == 1{
+                return SavingAccount(accountLoginObject: accounts[1])
+            }else{
+                return CurrentAccount(accountLoginObject: accounts[0])
+            }
         }
+        return nil
     }
 }

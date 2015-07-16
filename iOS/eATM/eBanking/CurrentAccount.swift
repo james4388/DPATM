@@ -19,6 +19,12 @@ class CurrentAccount: NSObject, IAccount {
         _balance = 0
     }
     
+    init(accountLoginObject : AccountLoginObject!) {
+        super.init()
+        _accountId = accountLoginObject.accountID
+        _balance = accountLoginObject.balance!
+    }
+    
     var accountId : String? {
         get{
             return _accountId

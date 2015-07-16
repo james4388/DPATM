@@ -107,5 +107,30 @@ class APIProxy: NSObject, APIInteface {
             })
         }
     }
+    
+    func getOTP(atmID: String!, accountID: String!, completionBlock handler: APICompletionHandler) {
+        // show loading view
+        LoadingView.sharedInstance().startLoading()
+        
+        realObject.getOTP(atmID, accountID: accountID) { (response : NSDictionary!, error : NSError!) -> Void in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                handler(response, error)
+                LoadingView.sharedInstance().stopLoading()
+            })
+        }
+    }
 
+    func withdraw(amount: String!, accountId : String!, challengID: String!, otpCode: String!, atmID: String!, completionBlock handler: APICompletionHandler) {
+        // show loading view
+        LoadingView.sharedInstance().startLoading()
+        
+        realObject.withdraw(amount, accountId : accountId, challengID: challengID, otpCode: otpCode, atmID: atmID) { (response : NSDictionary!, error : NSError!) -> Void in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                handler(response, error)
+                LoadingView.sharedInstance().stopLoading()
+            })
+        }
+    }
 }

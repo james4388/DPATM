@@ -116,4 +116,17 @@ class APIRemoteRealObject: NSObject, APIInteface {
             handler(json, error)
         }
     }
+    
+    func getOTP(atmID: String!, accountID: String!, completionBlock handler: APICompletionHandler) {
+        sendPOSTRequest("otp", params: ["accountId" : accountID, "atmId" : atmID]) { (json : NSDictionary?, error : NSError?) -> () in
+            handler(json, error)
+        }
+    }
+    
+    func withdraw(amount: String!, accountId : String!, challengID: String!, otpCode: String!, atmID: String!, completionBlock handler: APICompletionHandler) {
+        
+        sendPOSTRequest(String(format: "account/%@/withdraw", accountId), params: ["amount" : amount, "challengeId" : challengID, "otpCode" : otpCode, "atmId" : atmID]) { (json : NSDictionary?, error : NSError?) -> () in
+            handler(json, error)
+        }
+    }
 }

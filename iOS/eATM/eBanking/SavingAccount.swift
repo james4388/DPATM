@@ -10,11 +10,16 @@ import UIKit
 
 class SavingAccount: NSObject, IAccount {
     var _accountId : String?
-    var _balance : Double
+    var _balance : Double = 0
     
     override init() {
         _accountId = ""
-        _balance = 0
+    }
+    
+    init(accountLoginObject : AccountLoginObject!) {
+        super.init()
+        _accountId = accountLoginObject.accountID
+        _balance = accountLoginObject.balance!
     }
     
     var accountId : String? {

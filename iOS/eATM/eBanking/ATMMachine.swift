@@ -10,13 +10,14 @@ import UIKit
 
 class ATMMachine: NSObject {
     
+    var atmID : String = "ATM@MUM"
+    
     var servicingState : ATMState?
     var runOutOfMoney : ATMState?
     var outOfService : ATMState?
     
     var state : ATMState?
-    
-    var tradingAccount : IAccount?
+
     
     private var _amount : Double = 100000000
     
@@ -28,7 +29,6 @@ class ATMMachine: NSObject {
     
     private override init() {
         super.init()
-        tradingAccount = UserAccountSingleton.getInstance().currentAccount!
         servicingState = ServicingState(machine: self)
         runOutOfMoney = RunOutOfMoneyState(machine: self)
         outOfService = OutOfServiceState(machine: self)
@@ -65,6 +65,6 @@ class ATMMachine: NSObject {
     
     
     func withdrawAmount(amount: Double) -> NSError?{
-        return state?.withdraw(amount: amount, account: tradingAccount! )
+        return state?.withdraw(amount: amount, account: UserAccountSingleton.getInstance().currentAccount! )
     }
 }

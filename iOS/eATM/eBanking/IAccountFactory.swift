@@ -9,5 +9,5 @@
 import Foundation
 
 protocol IAccountFactory{
-    func createAccount(type : String!) -> IAccount
+    func createAccount(type : Int!) -> IAccount?
 }
