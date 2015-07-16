@@ -14,7 +14,7 @@ class APIRemoteRealObject: NSObject, APIInteface {
     
     override init() {
         super.init()
-        endpoint = NSURL(string : "http://172.17.3.223:8080")
+        endpoint = NSURL(string : "http://10.10.14.18:8080")
     }
     
     private func paramsKeyPairString(params : Dictionary<String, String>!) -> String{
@@ -29,7 +29,9 @@ class APIRemoteRealObject: NSObject, APIInteface {
         var request = NSMutableURLRequest(URL: NSURL(string: requestPath, relativeToURL: endpoint)!)
         request.timeoutInterval = 7
         request.HTTPMethod = method
-        request.HTTPBody = paramsKeyPairString(params).dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        if params != nil {
+            request.HTTPBody = paramsKeyPairString(params).dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        }
         
         return request
     }

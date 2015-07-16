@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Home Screen"
         checkBalanceButton.addTarget(self, action: "solveCheckBalanceButtonClick:", forControlEvents: .TouchUpInside)
         payBillButton.addTarget(self, action: "solvePayBillButtonClick:", forControlEvents: .TouchUpInside)
         changePinCodeButton.addTarget(self, action: "solveChangePinCodeButtonClick:", forControlEvents: .TouchUpInside)

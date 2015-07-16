@@ -75,8 +75,15 @@ class WithdrawViewController: UIViewController {
             if error == nil{
                 
                 var err = ATMMachine.sharedInstance().withdrawAmount((self.amountTextField.text as NSString).doubleValue)
-                if err != nil{
-                    self.performSegueWithIdentifier("TransactionCompleteViewController", sender: self)
+                if err == nil{
+                    var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
+                    if let completed = storyboard.instantiateViewControllerWithIdentifier("TransactionCompleteViewController") as? TransactionCompleteViewController{
+                        if let transactionID = json["transactionId"] as? String{
+                            completed.transactionID = transactionID
+                            self.navigationController?.pushViewController(completed, animated: true)
+                        }
+                        
+                    }
                 }else{
                     if let message = err!.userInfo![NSLocalizedDescriptionKey] as? String{
                         AlertSingleton.getInstance().showAlert(self, message: message)

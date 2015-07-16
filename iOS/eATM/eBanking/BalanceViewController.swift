@@ -17,6 +17,7 @@ class BalanceViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Check Balance"
         loadBalance()
         doneButton.addTarget(self, action: "solveDoneButtonClick:", forControlEvents: .TouchUpInside)
         printButton.addTarget(self, action: "solvePrintButtonClick:", forControlEvents: .TouchUpInside)

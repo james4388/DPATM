@@ -84,7 +84,7 @@ class PayBillViewController: UIViewController, UITableViewDelegate, UITableViewD
 
                 var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
                 if let completed = storyboard.instantiateViewControllerWithIdentifier("TransactionCompleteViewController") as? TransactionCompleteViewController{
-                    if let transactionID = json["transactionID"] as? String{
+                    if let transactionID = json["transactionId"] as? String{
                         completed.transactionID = transactionID
                         self.navigationController?.pushViewController(completed, animated: true)
                     }

@@ -13,6 +13,7 @@ class ChangePinCodeViewController: UIViewController {
 
     @IBOutlet weak var newPinCodeTextField: UITextField!
     override func viewDidLoad() {
+        self.title = "Change Pin"
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -49,7 +50,8 @@ class ChangePinCodeViewController: UIViewController {
             
             var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
             if error == nil{
-                if let success = storyboard.instantiateViewControllerWithIdentifier("TransactionCompleteViewController") as? UIViewController{
+                if let success = storyboard.instantiateViewControllerWithIdentifier("TransactionCompleteViewController") as? TransactionCompleteViewController{
+                    success.isChangePin = true
                     self.navigationController?.pushViewController(success, animated: true)
                 }
             }else{

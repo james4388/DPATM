@@ -15,6 +15,7 @@ class AccountTypeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Choose Account"
         currentAccountButton.addTarget(self, action: "solveCurrentAccountButtonClick:", forControlEvents: .TouchUpInside)
         savingAccountButton.addTarget(self, action: "solveSavingAccountButtonClick:", forControlEvents: .TouchUpInside)
         // Do any additional setup after loading the view.

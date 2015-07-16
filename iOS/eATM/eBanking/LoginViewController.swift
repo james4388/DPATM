@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Log in"
         loginButton.addTarget(self, action: "solveLoginButtonClick:", forControlEvents: .TouchUpInside)
         // Do any additional setup after loading the view.
     }

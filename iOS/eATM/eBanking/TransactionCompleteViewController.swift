@@ -10,11 +10,17 @@ import UIKit
 
 class TransactionCompleteViewController: UIViewController {
 
+    @IBOutlet weak var printButton: UIButton!
     var transactionID : String?
+    var isChangePin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if isChangePin {
+            printButton.hidden = true
+        } else {
+            printButton.hidden = false
+        }
         // Do any additional setup after loading the view.
     }
 
