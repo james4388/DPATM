@@ -83,8 +83,8 @@ class APIRemoteRealObject: NSObject, APIInteface {
         }
     }
     
-    func printAccountBalance(accountID: String!, completionBlock handler: APICompletionHandler) {
-        sendGetRequest(String(format: "account/%@/print", accountID), params: nil) { (json : NSDictionary?, error : NSError?) -> () in
+    func printBalance(accountId: String!, username: String!, completionBlock handler: APICompletionHandler) {
+        sendGetRequest("account/" + accountId + "/print/", params: ["userid" : username]) { (json : NSDictionary?, error : NSError?) -> () in
             handler(json, error)
         }
     }

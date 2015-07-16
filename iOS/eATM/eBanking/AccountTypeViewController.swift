@@ -9,10 +9,14 @@
 import UIKit
 
 class AccountTypeViewController: UIViewController {
+    @IBOutlet weak var currentAccountButton: UIButton!
 
+    @IBOutlet weak var savingAccountButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        currentAccountButton.addTarget(self, action: "solveCurrentAccountButtonClick:", forControlEvents: .TouchUpInside)
+        savingAccountButton.addTarget(self, action: "solveSavingAccountButtonClick:", forControlEvents: .TouchUpInside)
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +25,14 @@ class AccountTypeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func solveCurrentAccountButtonClick(sender: UIButton!) {
+        UserAccountSingleton.getInstance().accountType = 0
+        self.performSegueWithIdentifier("HomeViewController", sender:self)
+    }
+    func solveSavingAccountButtonClick(sender: UIButton!) {
+        UserAccountSingleton.getInstance().accountType = 1
+        self.performSegueWithIdentifier("HomeViewController", sender:self)
+    }
     /*
     // MARK: - Navigation
 

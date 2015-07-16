@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>95A2FA3E-0968-442E-80BD-667C6AF045E5</string>
 	<key>IDESourceControlProjectName</key>
-	<string>eBanking</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AAE6842638D91C4639275AB536F790EE055E1028</key>
 		<string>https://github.com/james4388/DPATM.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS/eATM/eBanking.xcodeproj</string>
+	<string>iOS/eATM/eBanking.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AAE6842638D91C4639275AB536F790EE055E1028</key>
