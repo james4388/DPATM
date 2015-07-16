@@ -10,6 +10,8 @@ import UIKit
 
 class TransactionCompleteViewController: UIViewController {
 
+    var transactionID : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +36,15 @@ class TransactionCompleteViewController: UIViewController {
 
     @IBAction func print(sender: UIButton) {
         // send Prind command to server
+        APIProxy.sharedInstance().printTransactionBalance(self.transactionID, completionBlock: { (json : NSDictionary!, error: NSError!) -> Void in
+            if error == nil{
+                AlertSingleton.getInstance().showAlert(self, message: "Check the Printer to get your Receipt")
+            }else{
+                if let message = error.userInfo![NSLocalizedDescriptionKey] as? String{
+                    AlertSingleton.getInstance().showAlert(self, message: message)
+                }
+            }
+        })
     }
     
     

@@ -23,10 +23,33 @@ class PayBillViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         //dummy data
         
-        bills.append(Bill(ID: "1", name: "Cellular(30$)"))
-        bills.append(Bill(ID: "2", name: "Net(20$)"))
-        bills.append(Bill(ID: "3", name: "Water(20$)"))
-        bills.append(Bill(ID: "4", name: "Electricity(30$)"))
+//        bills.append(Bill(ID: "1", name: "Cellular(30$)"))
+//        bills.append(Bill(ID: "2", name: "Net(20$)"))
+//        bills.append(Bill(ID: "3", name: "Water(20$)"))
+//        bills.append(Bill(ID: "4", name: "Electricity(30$)"))
+        
+        
+        APIProxy.sharedInstance().getAllBill(UserAccountSingleton.getInstance().userInfo?.user?.userId, completionBlock: { (json : NSDictionary!, error : NSError!) -> Void in
+            if error == nil{
+                if let dicts = json["bills"] as? NSArray{
+                    dicts.enumerateObjectsUsingBlock({ (obj : AnyObject!, index : Int, stop : UnsafeMutablePointer<ObjCBool>) -> Void in
+                        if let dict = obj as? NSDictionary{
+                            if var amount = (dict["amount"] as? NSNumber){
+                                var name = (dict["name"] as? String)! + "($" + amount.stringValue + ")"
+                                self.bills.append(Bill(ID: dict["id"] as? String, name: name))
+                            }
+                            
+                        }
+                    })
+                    
+                    self.tableView.reloadData()
+                }
+            }else{
+                if let message = error.userInfo![NSLocalizedDescriptionKey] as? String{
+                    AlertSingleton.getInstance().showAlert(self, message: message)
+                }
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,20 +71,28 @@ class PayBillViewController: UIViewController, UITableViewDelegate, UITableViewD
     //MARK: Handler
     
     @IBAction func didTouchedOnBillItem(sender: UIButton) {
-        
-        bills.removeAtIndex(sender.tag)
-        
-        tableView.beginUpdates()
-        tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: sender.tag, inSection: 0)], withRowAnimation: .Left)
-        tableView.endUpdates()
-        
-        tableView.reloadData()
-        
-        var random = arc4random_uniform(5)
-        if random % 2 == 1{
-            performSegueWithIdentifier("TransactionCompleteViewController", sender: self)
-        }else{
-            performSegueWithIdentifier("TransactionFailViewController", sender: self)
+        var bill = self.bills[sender.tag]
+        APIProxy.sharedInstance().payBill(bill.billID, atmID: ATMMachine.sharedInstance().atmID, accountID: UserAccountSingleton.getInstance().currentAccount?.accountId) { (json : NSDictionary!, error : NSError!) -> Void in
+            if error == nil{
+                self.bills.removeAtIndex(sender.tag)
+                
+                self.tableView.beginUpdates()
+                self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: sender.tag, inSection: 0)], withRowAnimation: .Left)
+                self.tableView.endUpdates()
+                
+                self.tableView.reloadData()
+
+                var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
+                if let completed = storyboard.instantiateViewControllerWithIdentifier("TransactionCompleteViewController") as? TransactionCompleteViewController{
+                    if let transactionID = json["transactionID"] as? String{
+                        completed.transactionID = transactionID
+                        self.navigationController?.pushViewController(completed, animated: true)
+                    }
+                    
+                }
+            }else{
+                self.performSegueWithIdentifier("TransactionFailViewController", sender: self)
+            }
         }
         
     }
