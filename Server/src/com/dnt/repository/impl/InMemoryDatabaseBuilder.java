@@ -5,7 +5,11 @@ import java.util.List;
 
 import com.dnt.model.ATM;
 import com.dnt.model.Account;
+import com.dnt.model.Bill;
+import com.dnt.model.CellularBill;
 import com.dnt.model.Current;
+import com.dnt.model.ElectricityBill;
+import com.dnt.model.GasBill;
 import com.dnt.model.OTPChallenge;
 import com.dnt.model.Saving;
 import com.dnt.model.Transaction;
@@ -18,6 +22,7 @@ public class InMemoryDatabaseBuilder {
 	private static List<OTPChallenge> otps;
 	private static List<Transaction> trans;
 	private static List<ATM> atms;
+	private static List<Bill> bills;
 	
 	public static InMemoryDatabaseBuilder getInstance(){
 		return instance;
@@ -109,6 +114,34 @@ public class InMemoryDatabaseBuilder {
 		mum.setId("ATM@MUM");
 		mum.setName("MUM ATM");
 		mum.setStatus("good");
+		
+		bills = new LinkedList<Bill>();
+		
+		//Tai Bill
+		Bill taiCell = new CellularBill();
+		taiCell.setAmount(20);
+		taiCell.setCompany("Tmobile");
+		taiCell.setId("B001");
+		taiCell.setName("Tmobile July");
+		taiCell.setOwner(tai);
+		
+		Bill taiGas = new GasBill();
+		taiGas.setAmount(50);
+		taiGas.setCompany("Petro");
+		taiGas.setId("B002");
+		taiGas.setName("Petro July");
+		taiGas.setOwner(tai);
+		
+		Bill taielec = new ElectricityBill();
+		taielec.setAmount(40);
+		taielec.setCompany("Thunder");
+		taielec.setId("B003");
+		taielec.setName("Petro July");
+		taielec.setOwner(tai);
+		
+		bills.add(taiCell);
+		bills.add(taiGas);
+		bills.add(taielec);
 	}
 	
 	public List<User> getUsers(){
@@ -126,5 +159,8 @@ public class InMemoryDatabaseBuilder {
 	}
 	public List<ATM> getATMs(){
 		return atms;
+	}
+	public List<Bill> getBills(){
+		return bills;
 	}
 }

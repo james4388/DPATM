@@ -1,12 +1,16 @@
 package com.dnt.model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 public abstract class Bill {
 	private String Id;
 	private String type;
 	private String name;
 	private String company;
-	private Double amount;
-	private Double serviceFee;
+	private double amount;
+	private double serviceFee;
+	@JsonIgnore
+	private User owner;
 	
 	public String getId() {
 		return Id;
@@ -35,13 +39,19 @@ public abstract class Bill {
 	public Double getAmount() {
 		return amount;
 	}
-	public void setAmount(Double amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	public Double getServiceFee() {
 		return serviceFee;
 	}
-	public void setServiceFee(Double serviceFee) {
+	public void setServiceFee(double serviceFee) {
 		this.serviceFee = serviceFee;
+	}
+	public User getOwner() {
+		return owner;
+	}
+	public void setOwner(User owner) {
+		this.owner = owner;
 	}
 }
