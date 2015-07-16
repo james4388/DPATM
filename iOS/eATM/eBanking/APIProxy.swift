@@ -42,4 +42,29 @@ class APIProxy: NSObject, APIInteface {
             })
         }
     }
+    
+    func printAccountBalance(accountID: String!, completionBlock handler: APICompletionHandler) {
+        // show loading view
+        LoadingView.sharedInstance().startLoading()
+        realObject.printAccountBalance(accountID, completionBlock: { (response : NSDictionary!, error : NSError!) -> Void in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                handler(response, error)
+                LoadingView.sharedInstance().stopLoading()
+            })
+        })
+    }
+    
+    func printTransactionBalance(transactionID: String!, completionBlock handler: APICompletionHandler) {
+        // show loading view
+        LoadingView.sharedInstance().startLoading()
+        realObject.printTransactionBalance(transactionID, completionBlock: { (json : NSDictionary!, error : NSError!) -> Void in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                handler(json, error)
+                LoadingView.sharedInstance().stopLoading()
+            })
+
+        })
+    }
 }

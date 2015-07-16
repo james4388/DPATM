@@ -221,8 +221,6 @@
 			children = (
 				002DF8D91B57016F001BDCF7 /* Factory */,
 				00DDD8F91B56C86300A2378A /* Singleton */,
-				502CAED51B56312700DE9261 /* Observer */,
-				502CAED31B5630A600DE9261 /* Command */,
 				502CAED21B56306E00DE9261 /* Proxy & Singleton & Facade */,
 				502CAED11B56305500DE9261 /* State */,
 			);
@@ -248,20 +246,6 @@
 				503E51D51B56C35300C37770 /* Remote API */,
 			);
 			name = "Proxy & Singleton & Facade";
-			sourceTree = "<group>";
-		};
-		502CAED31B5630A600DE9261 /* Command */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Command;
-			sourceTree = "<group>";
-		};
-		502CAED51B56312700DE9261 /* Observer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Observer;
 			sourceTree = "<group>";
 		};
 		50306DAC1B55F83C0080AC09 = {

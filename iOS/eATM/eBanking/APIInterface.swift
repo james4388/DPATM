@@ -14,4 +14,8 @@ protocol APIInteface{
 
     func login(username: String!, password: String!, completionBlock handler: APICompletionHandler)
     
+    func printAccountBalance(accountID : String!, completionBlock handler : APICompletionHandler)
+    
+    func printTransactionBalance(transactionID : String!, completionBlock handler : APICompletionHandler)
+    
 }
