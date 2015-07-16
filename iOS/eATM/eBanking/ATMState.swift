@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ATMState {
-    func withdraw(#amount : Double, account : UserAccountSingleton) -> NSError?
+    func withdraw(#amount : Double, account : IAccount) -> NSError?
 }

@@ -31,6 +31,11 @@
 		00DDD8F71B56C75D00A2378A /* online-banking-system.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00DDD8F21B56C75D00A2378A /* online-banking-system.jpg */; };
 		00DDD8FC1B56C88D00A2378A /* UserAccountSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8FB1B56C88D00A2378A /* UserAccountSingleton.swift */; };
 		00DDD8FE1B56CE2D00A2378A /* AlertSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8FD1B56CE2D00A2378A /* AlertSingleton.swift */; };
+		501CAA541B5776340059D0B6 /* IAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CAA531B5776330059D0B6 /* IAccount.swift */; };
+		501CAA561B5776D90059D0B6 /* CurrentAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CAA551B5776D90059D0B6 /* CurrentAccount.swift */; };
+		501CAA581B5776E40059D0B6 /* SavingAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CAA571B5776E40059D0B6 /* SavingAccount.swift */; };
+		501CAA5A1B577A5D0059D0B6 /* IAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CAA591B577A5D0059D0B6 /* IAccountFactory.swift */; };
+		501CAA5C1B577AA70059D0B6 /* ATMAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CAA5B1B577AA70059D0B6 /* ATMAccountFactory.swift */; };
 		502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */; };
 		502CAECC1B56249400DE9261 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAEC91B56249400DE9261 /* Bill.swift */; };
 		502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */; };
@@ -92,6 +97,11 @@
 		00DDD8F21B56C75D00A2378A /* online-banking-system.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "online-banking-system.jpg"; sourceTree = "<group>"; };
 		00DDD8FB1B56C88D00A2378A /* UserAccountSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountSingleton.swift; sourceTree = "<group>"; };
 		00DDD8FD1B56CE2D00A2378A /* AlertSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSingleton.swift; sourceTree = "<group>"; };
+		501CAA531B5776330059D0B6 /* IAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAccount.swift; sourceTree = "<group>"; };
+		501CAA551B5776D90059D0B6 /* CurrentAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentAccount.swift; sourceTree = "<group>"; };
+		501CAA571B5776E40059D0B6 /* SavingAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavingAccount.swift; sourceTree = "<group>"; };
+		501CAA591B577A5D0059D0B6 /* IAccountFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAccountFactory.swift; sourceTree = "<group>"; };
+		501CAA5B1B577AA70059D0B6 /* ATMAccountFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMAccountFactory.swift; sourceTree = "<group>"; };
 		502CAEC81B56249400DE9261 /* PayBillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayBillTableViewCell.swift; sourceTree = "<group>"; };
 		502CAEC91B56249400DE9261 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +190,11 @@
 		002DF8D91B57016F001BDCF7 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				501CAA531B5776330059D0B6 /* IAccount.swift */,
+				501CAA551B5776D90059D0B6 /* CurrentAccount.swift */,
+				501CAA571B5776E40059D0B6 /* SavingAccount.swift */,
+				501CAA591B577A5D0059D0B6 /* IAccountFactory.swift */,
+				501CAA5B1B577AA70059D0B6 /* ATMAccountFactory.swift */,
 			);
 			name = Factory;
 			sourceTree = "<group>";
@@ -490,15 +505,14 @@
 				5082503F1B56F5EE0028C932 /* ATMMachine.swift in Sources */,
 				00DDD8F31B56C75D00A2378A /* AccountTypeViewController.swift in Sources */,
 				002DF8D51B56F2CC001BDCF7 /* ISO8601DateTransform.swift in Sources */,
+				501CAA581B5776E40059D0B6 /* SavingAccount.swift in Sources */,
 				00DDD8FE1B56CE2D00A2378A /* AlertSingleton.swift in Sources */,
 				502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */,
+				501CAA541B5776340059D0B6 /* IAccount.swift in Sources */,
 				50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */,
-
 				508250411B56F6120028C932 /* ATMState.swift in Sources */,
-
 				002DF8CC1B56F2CC001BDCF7 /* Mapper.swift in Sources */,
 				002DF8B41B56F12B001BDCF7 /* AccountLoginObject.swift in Sources */,
-
 				502CAED71B5638A100DE9261 /* APIInterface.swift in Sources */,
 				502CAEDB1B56394A00DE9261 /* APIRemoteRealObject.swift in Sources */,
 				00DDD8FC1B56C88D00A2378A /* UserAccountSingleton.swift in Sources */,
@@ -515,19 +529,19 @@
 				002DF8D31B56F2CC001BDCF7 /* DateTransform.swift in Sources */,
 				50306DBD1B55F83C0080AC09 /* ViewController.swift in Sources */,
 				502CAED91B5638E400DE9261 /* APIProxy.swift in Sources */,
+				501CAA5A1B577A5D0059D0B6 /* IAccountFactory.swift in Sources */,
+				501CAA561B5776D90059D0B6 /* CurrentAccount.swift in Sources */,
 				50A330561B56023700029656 /* WithdrawViewController.swift in Sources */,
 				00DDD8F61B56C75D00A2378A /* LoginViewController.swift in Sources */,
+				501CAA5C1B577AA70059D0B6 /* ATMAccountFactory.swift in Sources */,
 				002DF8D71B56F2CC001BDCF7 /* TransformType.swift in Sources */,
 				502CAECB1B56249400DE9261 /* PayBillTableViewCell.swift in Sources */,
 				502CAECC1B56249400DE9261 /* Bill.swift in Sources */,
-
 				508250451B56F6CB0028C932 /* OutOfServiceState.swift in Sources */,
-
 				002DF8D81B56F2CC001BDCF7 /* URLTransform.swift in Sources */,
 				002DF8D21B56F2CC001BDCF7 /* DateFormaterTransform.swift in Sources */,
 				002DF8D11B56F2CC001BDCF7 /* CustomDateFormatTransform.swift in Sources */,
 				002DF8D61B56F2CC001BDCF7 /* TransformOf.swift in Sources */,
-
 				503E51D81B56C3DA00C37770 /* LoadingView.swift in Sources */,
 				50306DBB1B55F83C0080AC09 /* AppDelegate.swift in Sources */,
 			);

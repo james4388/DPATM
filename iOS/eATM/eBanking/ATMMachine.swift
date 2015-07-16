@@ -16,6 +16,8 @@ class ATMMachine: NSObject {
     
     var state : ATMState?
     
+    var tradingAccount : IAccount?
+    
     private var _amount : Double = 100000000
     
     var amount : Double{
@@ -26,7 +28,7 @@ class ATMMachine: NSObject {
     
     private override init() {
         super.init()
-        
+        tradingAccount = UserAccountSingleton.getInstance().currentAccount!
         servicingState = ServicingState(machine: self)
         runOutOfMoney = RunOutOfMoneyState(machine: self)
         outOfService = OutOfServiceState(machine: self)
@@ -47,14 +49,22 @@ class ATMMachine: NSObject {
     }
     
     
-    func returnMoney(amount : Double) -> Bool{
+    func canReturnMoney(amount : Double) -> Bool{
         if _amount >= amount{
-            _amount -= amount
             return true
         }else{
             return false
         }
     }
     
+    func returnMoney(amount : Double) -> Void{
+        if canReturnMoney(amount){
+            _amount -= amount
+        }
+    }
     
+    
+    func withdrawAmount(amount: Double) -> NSError?{
+        return state?.withdraw(amount: amount, account: tradingAccount! )
+    }
 }

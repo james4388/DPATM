@@ -17,20 +17,25 @@ class ServicingState: NSObject, ATMState {
     }
     
     //MARK: ATMState interface
-    func withdraw(#amount: Double, account : UserAccountSingleton) -> NSError? {
+    func withdraw(#amount: Double, account : IAccount) -> NSError? {
         
+        // check Money amount in ATM
         if mc.amount == 0{
             mc.state = mc.runOutOfMoney
             
             return NSError(domain: "eATM", code: 1001, userInfo: [NSLocalizedDescriptionKey : "Run out of money"])
         }
         
-        var success = mc.returnMoney(amount)
-        
-        if success{
-            return nil
+        if mc.canReturnMoney(amount){
+            if account.withdraw(amount){
+                mc.returnMoney(amount)
+            }else{
+                return NSError(domain: "eATM", code: 1001, userInfo: [NSLocalizedDescriptionKey : "Amount exceeds your balance"])
+            }
         }else{
             return NSError(domain: "eATM", code: 1001, userInfo: [NSLocalizedDescriptionKey : "Your amount exeeds the current amount in ATM"])
         }
+        
+        return nil
     }
 }

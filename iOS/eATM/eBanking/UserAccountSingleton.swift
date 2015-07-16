@@ -17,6 +17,9 @@ class UserAccountSingleton: NSObject {
     private var savingBalance: Double?
     var accountType = 0
     
+    var currentAccount : IAccount?
+    var savingAccount : IAccount?
+    
     private override init() {
     }
     
