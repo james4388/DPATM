@@ -37,6 +37,7 @@ public class ReceiptService {
 					} catch (PrintException pe) {
 					}
 				}
+				System.out.println(content);
 			}
 		};
 		
@@ -50,6 +51,7 @@ public class ReceiptService {
 				"Transaction date: "+t.getCreatedDate().toString()+"\r\n"+
 				"Account: "+t.getAccount().getAccountId()+"\r\n" +
 				"Name: "+t.getAccount().getOwner()+"\r\nAmount: $"+t.getAmount()+"\r\n"+
+				"Detail: "+ t.getDescription() + "\r\n"+
 				"-----------------------------";
 		print(content);
 	}

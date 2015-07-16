@@ -35,7 +35,7 @@ public class InMemoryDatabaseBuilder {
 		tai.setFirstName("Tai");
 		tai.setLastName("Ho");
 		tai.setEmail("hohuutai.uns@gmail.com");
-		tai.setPhoneNumber("4143593567");
+		tai.setPhoneNumber("4153593067");
 		tai.setUserId("9000001");
 		tai.setPin("123456");
 		//Dat
@@ -43,7 +43,7 @@ public class InMemoryDatabaseBuilder {
 		dat.setFirstName("Dat");
 		dat.setLastName("Tran");
 		dat.setEmail("datct0407@gmail.com");
-		dat.setPhoneNumber("4143593567");
+		dat.setPhoneNumber("4153593067");
 		dat.setUserId("9000002");
 		dat.setPin("123456");
 		//Nhu
@@ -51,7 +51,7 @@ public class InMemoryDatabaseBuilder {
 		nhu.setFirstName("Nhu");
 		nhu.setLastName("Trinh");
 		nhu.setEmail("trinhhoangnhu@gmail.com");
-		nhu.setPhoneNumber("4143593067");
+		nhu.setPhoneNumber("4153593067");
 		nhu.setUserId("9000003");
 		nhu.setPin("123456");
 		
@@ -136,12 +136,20 @@ public class InMemoryDatabaseBuilder {
 		taielec.setAmount(40);
 		taielec.setCompany("Thunder");
 		taielec.setId("B003");
-		taielec.setName("Petro July");
+		taielec.setName("Electrict July");
 		taielec.setOwner(tai);
+		
+		Bill taielec2 = new ElectricityBill();
+		taielec2.setAmount(50);
+		taielec2.setCompany("Thunder");
+		taielec2.setId("B004");
+		taielec2.setName("Electrict June");
+		taielec2.setOwner(tai);
 		
 		bills.add(taiCell);
 		bills.add(taiGas);
 		bills.add(taielec);
+		bills.add(taielec2);
 	}
 	
 	public List<User> getUsers(){

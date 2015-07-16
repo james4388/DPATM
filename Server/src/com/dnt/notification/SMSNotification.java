@@ -10,6 +10,7 @@ public class SMSNotification extends NotificationHandler {
 	@Override
 	public void send(User u, Transaction t) {
 		SMSGateway sms = SMSFactory.getFactory().createGateway("Twilio");
+		System.out.println(u.getPhoneNumber());
 		sms.send(u.getPhoneNumber(), "Your account has been changed: " + t.getType() + " $" + t.getAmount());
 		if (this.nextHandler != null){
 			this.nextHandler.send(u, t);
