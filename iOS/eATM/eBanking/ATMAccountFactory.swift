@@ -9,6 +9,23 @@
 import UIKit
 
 class ATMAccountFactory: NSObject,IAccountFactory {
+    
+    //MARK: Singleton
+    private class var instance : ATMAccountFactory{
+        struct Singleton {
+            static let instance = ATMAccountFactory()
+        }
+        return Singleton.instance
+    }
+    
+    class func factory() -> ATMAccountFactory{
+        return instance
+    }
+    
+    private override init() {
+        super.init()
+    }
+    
     func createAccount(type : String!) -> IAccount{
         if type == "Saving"{
             return SavingAccount()
