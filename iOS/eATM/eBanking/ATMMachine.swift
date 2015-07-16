@@ -14,9 +14,15 @@ class ATMMachine: NSObject {
     var runOutOfMoney : ATMState?
     var outOfService : ATMState?
     
-    private var state : ATMState?
+    var state : ATMState?
     
-    private var amount : Double = 100000000
+    private var _amount : Double = 100000000
+    
+    var amount : Double{
+        get{
+            return _amount
+        }
+    }
     
     private override init() {
         super.init()
@@ -39,5 +45,16 @@ class ATMMachine: NSObject {
     class func sharedInstance() -> ATMMachine{
         return instance
     }
-
+    
+    
+    func returnMoney(amount : Double) -> Bool{
+        if _amount >= amount{
+            _amount -= amount
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    
 }

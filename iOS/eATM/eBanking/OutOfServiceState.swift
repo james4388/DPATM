@@ -17,7 +17,7 @@ class OutOfServiceState: NSObject, ATMState {
     }
     
     //MARK: ATMState interface
-    func withdraw(#amount: Double) -> Bool {
-        return false
+    func withdraw(#amount: Double, account : UserAccountSingleton) -> NSError? {
+        return NSError(domain: "eATM", code: 1001, userInfo: [NSLocalizedDescriptionKey : "Out of service"])
     }
 }
