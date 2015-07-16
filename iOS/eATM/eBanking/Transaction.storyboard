@@ -430,10 +430,77 @@
             </objects>
             <point key="canvasLocation" x="1012" y="2427"/>
         </scene>
+        <!--Change Pin Code-->
+        <scene sceneID="36t-Hk-xh4">
+            <objects>
+                <viewController storyboardIdentifier="ChangePinCodeViewController" title="Change Pin Code" id="tC8-zo-VJj" customClass="ChangePinCodeViewController" customModule="eBanking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Sr-Wp-VlY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fd7-G1-JSV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lYG-VG-MHY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old pin code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="69I-uK-pmZ">
+                                <rect key="frame" x="150" y="80" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4bn-Sg-3he"/>
+                                    <constraint firstAttribute="height" constant="50" id="j18-4M-IDZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Pin code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4LX-KY-Jrd">
+                                <rect key="frame" x="150" y="160" width="300" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYc-HD-rLQ">
+                                <rect key="frame" x="175" y="250" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Fcj-59-p0d"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ll5-H3-O4L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submit:" destination="tC8-zo-VJj" eventType="touchUpInside" id="23z-do-fen"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="69I-uK-pmZ" secondAttribute="centerX" id="3yM-Me-Tio"/>
+                            <constraint firstItem="69I-uK-pmZ" firstAttribute="height" secondItem="4LX-KY-Jrd" secondAttribute="height" id="BXm-9t-7K2"/>
+                            <constraint firstItem="4LX-KY-Jrd" firstAttribute="top" secondItem="69I-uK-pmZ" secondAttribute="bottom" constant="30" id="GWJ-7I-GZG"/>
+                            <constraint firstItem="dYc-HD-rLQ" firstAttribute="top" secondItem="4LX-KY-Jrd" secondAttribute="bottom" constant="40" id="JQk-Mo-yFz"/>
+                            <constraint firstItem="69I-uK-pmZ" firstAttribute="width" secondItem="4LX-KY-Jrd" secondAttribute="width" id="Jbe-Bl-ThJ"/>
+                            <constraint firstItem="69I-uK-pmZ" firstAttribute="centerX" secondItem="4LX-KY-Jrd" secondAttribute="centerX" id="Rv6-8c-YXY"/>
+                            <constraint firstItem="69I-uK-pmZ" firstAttribute="top" secondItem="6Sr-Wp-VlY" secondAttribute="bottom" constant="80" id="S4V-Mb-hQa"/>
+                            <constraint firstAttribute="centerX" secondItem="dYc-HD-rLQ" secondAttribute="centerX" id="cRU-6o-cjM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Withdraw" id="FAD-FC-NdB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="newPinCodeTextField" destination="4LX-KY-Jrd" id="ley-2q-8Sb"/>
+                        <outlet property="oldPinCodeTextField" destination="69I-uK-pmZ" id="y2a-Aj-MPE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cBC-98-rEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="335"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KWP-xz-fem"/>
-        <segue reference="OBr-2G-l4q"/>
+        <segue reference="0NZ-W5-W9i"/>
+        <segue reference="Dvb-ut-HbM"/>
         <segue reference="BF8-hO-tzm"/>
     </inferredMetricsTieBreakers>
 </document>

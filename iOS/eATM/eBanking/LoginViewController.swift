@@ -37,6 +37,9 @@ class LoginViewController: UIViewController {
                 var returnObject: LoginReturnObject
                 returnObject = Mapper<LoginReturnObject>().map(json)!
                 if returnObject.result == "OK" {
+                    
+                    UserAccountSingleton.getInstance().userInfo = returnObject
+                    
                     var account1 = returnObject.user?.accounts![0]
                     var account2 = returnObject.user?.accounts![1]
                     if account1?.type == "Saving" {

@@ -42,7 +42,12 @@ class APIRemoteRealObject: NSObject, APIInteface {
                 handler(nil, error)
             }else{
                 if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary{
-                    handler(json, nil)
+                    if json["result"] as? String == "OK"{
+                        handler(json, nil)
+                    }else{
+                        handler(nil, NSError(domain: "eATM", code: 1000, userInfo: [NSLocalizedDescriptionKey : json["message"] as! String]))
+                    }
+                    
                 }else{
                     handler(nil, NSError(domain: "eATM", code: 100, userInfo: [NSLocalizedDescriptionKey : "Wrong JSON format"]))
                 }
@@ -60,7 +65,11 @@ class APIRemoteRealObject: NSObject, APIInteface {
                 handler(nil, error)
             }else{
                 if let json = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary{
-                    handler(json, nil)
+                    if json["result"] as? String == "OK"{
+                        handler(json, nil)
+                    }else{
+                        handler(nil, NSError(domain: "eATM", code: 1000, userInfo: [NSLocalizedDescriptionKey : json["message"] as! String]))
+                    }
                 }else{
                     handler(nil, NSError(domain: "eATM", code: 100, userInfo: [NSLocalizedDescriptionKey : "Wrong JSON format"]))
                 }
@@ -85,6 +94,25 @@ class APIRemoteRealObject: NSObject, APIInteface {
     
     func printBalance(accountId: String!, username: String!, completionBlock handler: APICompletionHandler) {
         sendGetRequest("account/" + accountId + "/print/", params: ["userid" : username]) { (json : NSDictionary?, error : NSError?) -> () in
+            handler(json, error)
+        }
+    }
+    
+    func changePinCode(userId : String!, oldPinCode: String!, newPinCode: String!, completionBlock handler: APICompletionHandler) {
+        sendPOSTRequest("account/changepin", params: ["userid" : userId,"pincode" : oldPinCode, "newPincode" : newPinCode ]) { (json : NSDictionary?, error : NSError?) -> () in
+            handler(json, error)
+        }
+    }
+    
+    func getAllBill(userID: String!, completionBlock handler: APICompletionHandler) {
+        
+        sendPOSTRequest("bill/userbill", params: ["userid" : userID]) { (json : NSDictionary?, error : NSError?) -> () in
+            handler(json, error)
+        }
+    }
+    
+    func payBill(billID: String!, atmID: String!, accountID: String!, completionBlock handler: APICompletionHandler) {
+        sendPOSTRequest(String(format: "bill/%@/pay", billID), params: ["accountId" : accountID, "atmId" : atmID]) { (json : NSDictionary?, error : NSError?) -> () in
             handler(json, error)
         }
     }

@@ -50,6 +50,7 @@
 		50306DD11B55F83C0080AC09 /* eBankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50306DD01B55F83C0080AC09 /* eBankingTests.swift */; };
 		50306DDB1B55F88F0080AC09 /* Transaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50306DDA1B55F88F0080AC09 /* Transaction.storyboard */; };
 		503E51D81B56C3DA00C37770 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E51D71B56C3DA00C37770 /* LoadingView.swift */; };
+		506B20F61B57DF470005D2BA /* ChangePinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B20F51B57DF470005D2BA /* ChangePinCodeViewController.swift */; };
 		5082503F1B56F5EE0028C932 /* ATMMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5082503E1B56F5EE0028C932 /* ATMMachine.swift */; };
 		508250411B56F6120028C932 /* ATMState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508250401B56F6120028C932 /* ATMState.swift */; };
 		508250431B56F6800028C932 /* RunOutOfMoneyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508250421B56F6800028C932 /* RunOutOfMoneyState.swift */; };
@@ -120,6 +121,7 @@
 		50306DD01B55F83C0080AC09 /* eBankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eBankingTests.swift; sourceTree = "<group>"; };
 		50306DDA1B55F88F0080AC09 /* Transaction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transaction.storyboard; sourceTree = "<group>"; };
 		503E51D71B56C3DA00C37770 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		506B20F51B57DF470005D2BA /* ChangePinCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePinCodeViewController.swift; sourceTree = "<group>"; };
 		5082503E1B56F5EE0028C932 /* ATMMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMMachine.swift; sourceTree = "<group>"; };
 		508250401B56F6120028C932 /* ATMState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATMState.swift; sourceTree = "<group>"; };
 		508250421B56F6800028C932 /* RunOutOfMoneyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunOutOfMoneyState.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				50A330591B56029C00029656 /* TransactionFailViewController.swift */,
 				50A3305B1B56037E00029656 /* PayBillViewController.swift */,
 				502CAECE1B562DB100DE9261 /* ThankYouViewController.swift */,
+				506B20F51B57DF470005D2BA /* ChangePinCodeViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				502CAED91B5638E400DE9261 /* APIProxy.swift in Sources */,
 				501CAA5A1B577A5D0059D0B6 /* IAccountFactory.swift in Sources */,
 				501CAA561B5776D90059D0B6 /* CurrentAccount.swift in Sources */,
+				506B20F61B57DF470005D2BA /* ChangePinCodeViewController.swift in Sources */,
 				50A330561B56023700029656 /* WithdrawViewController.swift in Sources */,
 				00DDD8F61B56C75D00A2378A /* LoginViewController.swift in Sources */,
 				501CAA5C1B577AA70059D0B6 /* ATMAccountFactory.swift in Sources */,

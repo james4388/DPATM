@@ -18,4 +18,11 @@ protocol APIInteface{
     
     func printTransactionBalance(transactionID : String!, completionBlock handler : APICompletionHandler)
     
+    
+    func changePinCode(userId : String!, oldPinCode : String!, newPinCode : String!, completionBlock handler : APICompletionHandler)
+    
+    func getAllBill(userID : String!, completionBlock handler : APICompletionHandler)
+    
+    func payBill(billID : String!, atmID : String!, accountID : String!, completionBlock handler : APICompletionHandler)
+    
 }

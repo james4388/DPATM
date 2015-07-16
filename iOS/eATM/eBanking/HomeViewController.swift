@@ -50,23 +50,39 @@ class HomeViewController: UIViewController {
     }
     
     func solvePayBillButtonClick(sender: UIButton!) {
-        self.performSegueWithIdentifier("BalanceViewController", sender:self)
+        var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
+        if let payBill = storyboard.instantiateViewControllerWithIdentifier("PayBillViewController") as? UIViewController{
+            navigationController?.pushViewController(payBill, animated: true)
+        }
+        
     }
     
     func solveChangePinCodeButtonClick(sender: UIButton!) {
-        self.performSegueWithIdentifier("BalanceViewController", sender:self)
+        var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
+        if let changePinCode = storyboard.instantiateViewControllerWithIdentifier("ChangePinCodeViewController") as? UIViewController{
+            navigationController?.pushViewController(changePinCode, animated: true)
+        }
     }
     
     func solveDraw20ButtonClick(sender: UIButton!) {
-        self.performSegueWithIdentifier("BalanceViewController", sender:self)
+        var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
+        if let withdraw = storyboard.instantiateViewControllerWithIdentifier("WithdrawViewController") as? WithdrawViewController{
+            navigationController?.pushViewController(withdraw, animated: true)
+        }
     }
     
     func solveDraw50ButtonClick(sender: UIButton!) {
-        self.performSegueWithIdentifier("BalanceViewController", sender:self)
+        var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
+        if let withdraw = storyboard.instantiateViewControllerWithIdentifier("WithdrawViewController") as? WithdrawViewController{
+            navigationController?.pushViewController(withdraw, animated: true)
+        }
     }
     
     func solveDrawAnotherButtonClick(sender: UIButton!) {
-        self.performSegueWithIdentifier("BalanceViewController", sender:self)
+        var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
+        if let withdraw = storyboard.instantiateViewControllerWithIdentifier("WithdrawViewController") as? WithdrawViewController{
+            navigationController?.pushViewController(withdraw, animated: true)
+        }
     }
     /*
     // MARK: - Navigation

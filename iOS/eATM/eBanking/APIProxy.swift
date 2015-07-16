@@ -70,5 +70,42 @@ class APIProxy: NSObject, APIInteface {
             })
         }
     }
+    
+    func changePinCode(userId : String!, oldPinCode: String!, newPinCode: String!, completionBlock handler: APICompletionHandler) {
+        // show loading view
+        LoadingView.sharedInstance().startLoading()
+        
+        realObject.changePinCode(userId, oldPinCode : oldPinCode, newPinCode: newPinCode) { (response : NSDictionary!, error : NSError!) -> Void in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                handler(response, error)
+                LoadingView.sharedInstance().stopLoading()
+            })
+        }
+    }
+    
+    func getAllBill(userID: String!, completionBlock handler: APICompletionHandler) {
+        // show loading view
+        LoadingView.sharedInstance().startLoading()
+        realObject.getAllBill(userID, completionBlock: { (response : NSDictionary!, error : NSError!) -> Void in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                handler(response, error)
+                LoadingView.sharedInstance().stopLoading()
+            })
+        })
+    }
+    
+    func payBill(billID: String!, atmID: String!, accountID: String!, completionBlock handler: APICompletionHandler) {
+        // show loading view
+        LoadingView.sharedInstance().startLoading()
+        realObject.payBill(billID, atmID: atmID, accountID: accountID) { (response : NSDictionary!, error : NSError!) -> Void in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                handler(response, error)
+                LoadingView.sharedInstance().stopLoading()
+            })
+        }
+    }
 
 }

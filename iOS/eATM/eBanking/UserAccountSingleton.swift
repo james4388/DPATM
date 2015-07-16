@@ -20,6 +20,8 @@ class UserAccountSingleton: NSObject {
     var currentAccount : IAccount?
     var savingAccount : IAccount?
     
+    var userInfo : LoginReturnObject?
+    
     private override init() {
     }
     
