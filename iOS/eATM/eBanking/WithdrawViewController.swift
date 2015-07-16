@@ -28,7 +28,7 @@ class WithdrawViewController: UIViewController {
         submitButton.layer.cornerRadius = 5;
         
         if let amount = amount{
-            amountTextField.text = String(format: "%f", amount)
+            amountTextField.text = String(format: "%.0f", amount)
             amountTextField.userInteractionEnabled = false
             
         }
@@ -73,7 +73,16 @@ class WithdrawViewController: UIViewController {
         // submit to Web service and navigate to Transaction Complete/Transaction Fail
         APIProxy.sharedInstance().withdraw(amountTextField.text, accountId: UserAccountSingleton.getInstance().currentAccount?.accountId, challengID: self.challengeID, otpCode: otpCodeTextField.text, atmID: ATMMachine.sharedInstance().atmID) { (json : NSDictionary!, error : NSError!) -> Void in
             if error == nil{
-                self.performSegueWithIdentifier("TransactionCompleteViewController", sender: self)
+                
+                var err = ATMMachine.sharedInstance().withdrawAmount((self.amountTextField.text as NSString).doubleValue)
+                if err != nil{
+                    self.performSegueWithIdentifier("TransactionCompleteViewController", sender: self)
+                }else{
+                    if let message = err!.userInfo![NSLocalizedDescriptionKey] as? String{
+                        AlertSingleton.getInstance().showAlert(self, message: message)
+                    }
+                }
+                
             }else{
                 if let message = error.userInfo![NSLocalizedDescriptionKey] as? String{
                     AlertSingleton.getInstance().showAlert(self, message: message)

@@ -67,6 +67,7 @@ class HomeViewController: UIViewController {
     func solveDraw20ButtonClick(sender: UIButton!) {
         var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
         if let withdraw = storyboard.instantiateViewControllerWithIdentifier("WithdrawViewController") as? WithdrawViewController{
+            withdraw.amount = 20;
             navigationController?.pushViewController(withdraw, animated: true)
         }
     }
@@ -74,6 +75,7 @@ class HomeViewController: UIViewController {
     func solveDraw50ButtonClick(sender: UIButton!) {
         var storyboard = UIStoryboard(name: "Transaction", bundle: nil)
         if let withdraw = storyboard.instantiateViewControllerWithIdentifier("WithdrawViewController") as? WithdrawViewController{
+            withdraw.amount = 50;
             navigationController?.pushViewController(withdraw, animated: true)
         }
     }
