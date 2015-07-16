@@ -15,9 +15,9 @@ import com.dnt.model.Account;
 import com.dnt.model.Bill;
 import com.dnt.model.Transaction;
 import com.dnt.model.User;
-import com.dnt.repository.BillRepository;
 import com.dnt.service.AccountService;
 import com.dnt.service.BillService;
+import com.dnt.service.TransactionService;
 import com.dnt.service.UserService;
 import com.dnt.service.transaction.TransactionCommand;
 import com.dnt.service.transaction.WithdrawTransaction;
@@ -59,6 +59,7 @@ public class BillRest {
 			t.setType("Withdraw");
 			TransactionCommand cmd = new WithdrawTransaction();
 			cmd.execute(t);
+			TransactionService.getInstance().getRepository().createTransaction(t);
 			BillService.getInstance().getRepository().removeBill(b);
 			result.put("result", "OK");
 			result.put("transactionId", t.getTransactionID());
