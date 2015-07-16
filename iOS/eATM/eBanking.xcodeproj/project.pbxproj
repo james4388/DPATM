@@ -24,6 +24,7 @@
 		002DF8D61B56F2CC001BDCF7 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002DF8C81B56F2CC001BDCF7 /* TransformOf.swift */; };
 		002DF8D71B56F2CC001BDCF7 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002DF8C91B56F2CC001BDCF7 /* TransformType.swift */; };
 		002DF8D81B56F2CC001BDCF7 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002DF8CA1B56F2CC001BDCF7 /* URLTransform.swift */; };
+		002DF8DB1B5705CC001BDCF7 /* IAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002DF8DA1B5705CC001BDCF7 /* IAccount.swift */; };
 		00DDD8F31B56C75D00A2378A /* AccountTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8EE1B56C75D00A2378A /* AccountTypeViewController.swift */; };
 		00DDD8F41B56C75D00A2378A /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8EF1B56C75D00A2378A /* BalanceViewController.swift */; };
 		00DDD8F51B56C75D00A2378A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DDD8F01B56C75D00A2378A /* HomeViewController.swift */; };
@@ -80,6 +81,7 @@
 		002DF8C81B56F2CC001BDCF7 /* TransformOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOf.swift; sourceTree = "<group>"; };
 		002DF8C91B56F2CC001BDCF7 /* TransformType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformType.swift; sourceTree = "<group>"; };
 		002DF8CA1B56F2CC001BDCF7 /* URLTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTransform.swift; sourceTree = "<group>"; };
+		002DF8DA1B5705CC001BDCF7 /* IAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAccount.swift; sourceTree = "<group>"; };
 		00DDD8EE1B56C75D00A2378A /* AccountTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTypeViewController.swift; sourceTree = "<group>"; };
 		00DDD8EF1B56C75D00A2378A /* BalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		00DDD8F01B56C75D00A2378A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		002DF8D91B57016F001BDCF7 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				002DF8DA1B5705CC001BDCF7 /* IAccount.swift */,
 			);
 			name = Factory;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			files = (
 				00DDD8F31B56C75D00A2378A /* AccountTypeViewController.swift in Sources */,
 				002DF8D51B56F2CC001BDCF7 /* ISO8601DateTransform.swift in Sources */,
+				002DF8DB1B5705CC001BDCF7 /* IAccount.swift in Sources */,
 				00DDD8FE1B56CE2D00A2378A /* AlertSingleton.swift in Sources */,
 				502CAECF1B562DB100DE9261 /* ThankYouViewController.swift in Sources */,
 				50A330581B56027500029656 /* TransactionCompleteViewController.swift in Sources */,

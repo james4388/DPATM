@@ -42,4 +42,17 @@ class APIProxy: NSObject, APIInteface {
             })
         }
     }
+    
+    func printBalance(accountId: String!, username: String!, completionBlock: APICompletionHandler) {
+        
+        // show loading view
+        LoadingView.sharedInstance().startLoading()
+        realObject.printBalance(accountId, username: username) { (response: NSDictionary!, error : NSError!) -> () in
+            // hide loading view
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completionBlock(response, error)
+                LoadingView.sharedInstance().stopLoading()
+            })
+        }
+    }
 }

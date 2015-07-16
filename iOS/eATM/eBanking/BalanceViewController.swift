@@ -10,10 +10,16 @@ import UIKit
 
 class BalanceViewController: UIViewController {
 
+    @IBOutlet weak var balanceLabel: UILabel!
+    
+    @IBOutlet weak var printButton: UIButton!
+    
+    @IBOutlet weak var doneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loadBalance()
+        doneButton.addTarget(self, action: "solveDoneButtonClick:", forControlEvents: .TouchUpInside)
+        printButton.addTarget(self, action: "solvePrintButtonClick:", forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +27,37 @@ class BalanceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func loadBalance() {
+        var user = UserAccountSingleton.getInstance()
+        var balance: Double
+        if user.accountType == 0 {
+            balance = user.getCurrentBalance()
+        } else {
+            balance = user.getSavingBalance()
+        }
+        balanceLabel.text = "Your balance: " + balance.description
+    }
 
+    func solveDoneButtonClick(sender: UIButton!) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func solvePrintButtonClick(sender: UIButton!) {
+        var user = UserAccountSingleton.getInstance()
+        var accountId: String
+        if user.accountType == 0 {
+            accountId = user.getCurrentAccountNumber()
+        } else {
+            accountId = user.getSavingAccountNumber()
+        }
+        APIProxy.sharedInstance().printBalance(accountId, username: accountId, completionBlock: { (json: NSDictionary!, error: NSError!) -> () in
+//            if error != nil {
+//                AlertSingleton.getInstance().showAlert(self, message: "Print failed, try again!")
+//            } else {
+                AlertSingleton.getInstance().showAlert(self, message: "Print successful!")
+//            }
+        })
+    }
     /*
     // MARK: - Navigation
 

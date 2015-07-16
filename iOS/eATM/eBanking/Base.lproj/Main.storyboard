@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KMr-oY-Z5f">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9000001" borderStyle="roundedRect" placeholder="Account Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KMr-oY-Z5f">
                                 <rect key="frame" x="154.5" y="264" width="291" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="291" id="pG4-DJ-CZu"/>
@@ -26,10 +26,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PIN Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JdI-6O-sSv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="PIN Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JdI-6O-sSv">
                                 <rect key="frame" x="154.5" y="321" width="291" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-M1-eQ0">
                                 <rect key="frame" x="232.5" y="378" width="134" height="30"/>
@@ -137,7 +137,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="bze-Ch-wDT"/>
                     <connections>
-                        <segue destination="zAB-Ul-jcK" kind="show" identifier="AccountTypeViewController" id="2SA-Sm-Cui"/>
+                        <outlet property="currentAccountButton" destination="Sb4-G1-VAS" id="Rsi-O8-Wg3"/>
+                        <outlet property="savingAccountButton" destination="OhY-v0-sXf" id="x9Z-5n-cdY"/>
+                        <segue destination="zAB-Ul-jcK" kind="show" identifier="HomeViewController" id="2SA-Sm-Cui"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGR-xu-dCc" sceneMemberID="firstResponder"/>
@@ -298,6 +300,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d2j-IO-W6a"/>
+                    <connections>
+                        <outlet property="changePinCodeButton" destination="Ubv-Lc-1fn" id="8PV-9a-hY0"/>
+                        <outlet property="checkBalanceButton" destination="Ook-ax-SP4" id="3o4-8F-i4C"/>
+                        <outlet property="draw20Button" destination="zZi-Ro-6Rs" id="OMG-KX-qeh"/>
+                        <outlet property="draw50Button" destination="Ppz-mG-qDv" id="9fg-1a-NcQ"/>
+                        <outlet property="drawAnotherButton" destination="fh5-RN-aNI" id="7nL-Kz-aed"/>
+                        <outlet property="payBillButton" destination="HiU-Yj-5HA" id="Udc-lf-XLt"/>
+                        <segue destination="6xE-LX-kYa" kind="show" identifier="BalanceViewController" id="SwM-yo-FLV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCk-br-GfK" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,6 +384,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jgD-Lv-aAo"/>
+                    <connections>
+                        <outlet property="balanceLabel" destination="Xrq-7E-bat" id="W6B-tr-hkP"/>
+                        <outlet property="doneButton" destination="BZa-3W-I0n" id="1f1-4x-s6W"/>
+                        <outlet property="printButton" destination="XEL-h2-13O" id="qg0-hr-1Zx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6t-Ew-idT" sceneMemberID="firstResponder"/>
             </objects>
