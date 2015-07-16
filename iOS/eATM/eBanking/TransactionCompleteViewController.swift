@@ -39,11 +39,11 @@ class TransactionCompleteViewController: UIViewController {
     
     @IBAction func yes(sender: UIButton) {
         // go back Home screen
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            if let homeScreen = appDelegate.homeScreen{
+                navigationController?.popToViewController(homeScreen, animated: true)
+            }
+        }
     }
-    
-    @IBAction func no(sender: UIButton) {
-        // return card
-    }
-    
     
 }

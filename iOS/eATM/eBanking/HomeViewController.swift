@@ -13,6 +13,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // keep track Home screen
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate{
+            appDelegate.homeScreen = self
+        }
         // Do any additional setup after loading the view.
     }
 

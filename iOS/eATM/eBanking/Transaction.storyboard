@@ -143,7 +143,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="no:" destination="1G9-aa-Afv" eventType="touchUpInside" id="jp2-xj-6Pj"/>
                                     <segue destination="ybY-qI-ZUl" kind="show" id="BF8-hO-tzm"/>
                                 </connections>
                             </button>
@@ -351,7 +350,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="no:" destination="hEo-Sn-KmH" eventType="touchUpInside" id="7zk-hx-MEj"/>
                                     <segue destination="ybY-qI-ZUl" kind="show" id="jWc-Bk-v4F"/>
                                 </connections>
                             </button>
@@ -398,13 +396,32 @@
                                 <color key="textColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5G-un-QPg">
+                                <rect key="frame" x="200" y="220" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.77647058820000003" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Vue-jh-2Rv"/>
+                                    <constraint firstAttribute="height" constant="50" id="xJg-RE-rLY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="ybY-qI-ZUl" eventType="touchUpInside" id="HaQ-dN-Bsd"/>
+                                    <action selector="print:" destination="1G9-aa-Afv" eventType="touchUpInside" id="zvb-90-7ee"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4Mr-OA-5pr" secondAttribute="trailing" constant="120" id="CP3-Lw-CjN"/>
+                            <constraint firstItem="e5G-un-QPg" firstAttribute="top" secondItem="4Mr-OA-5pr" secondAttribute="bottom" constant="60" id="Ccz-CR-Hpg"/>
                             <constraint firstItem="4Mr-OA-5pr" firstAttribute="top" secondItem="EBh-du-Yx3" secondAttribute="bottom" constant="100" id="aU3-7M-p4x"/>
                             <constraint firstAttribute="centerX" secondItem="4Mr-OA-5pr" secondAttribute="centerX" id="p1c-VU-f8O"/>
                             <constraint firstItem="4Mr-OA-5pr" firstAttribute="leading" secondItem="sjf-b7-ULg" secondAttribute="leading" constant="120" id="xbA-SZ-5vk"/>
+                            <constraint firstAttribute="centerX" secondItem="e5G-un-QPg" secondAttribute="centerX" id="zdB-GB-n03"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -415,8 +432,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OBr-2G-l4q"/>
         <segue reference="KWP-xz-fem"/>
+        <segue reference="OBr-2G-l4q"/>
         <segue reference="BF8-hO-tzm"/>
     </inferredMetricsTieBreakers>
 </document>
